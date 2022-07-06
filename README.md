@@ -7,8 +7,6 @@
 
 NOT QUITE READY FOR PRIME TIME. More details at [Patreon](https://www.patreon.com/lonnieezell)
 
-NOTE: This currently uses the dev-develop branch of CodeIgniter4. This will be changed once version 4.2 is released.
-
 NOTE: If you need the previous, standalone version, it is available under the `kickstart` branch.
 
 This repo holds the primary code of [Bonfire](https://github.com/lonnieezell/Bonfire2). It was ripped from the previous
@@ -35,7 +33,6 @@ Currently, it includes the following features:
 - A powerful, very customizable, user authentication/authorization system, [Shield](https://github.com/lonnieezell/codigniter-shield).
 - Global search feature that modules can easily integrate into
 - A Recycle Bin to handle restoring/purghing soft deleted models that modules can easily integrate into
-- A simple documentation system that allows you to provide guides for your clients, or your development teams.
 - and more to come...
 
 
