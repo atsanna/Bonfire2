@@ -1002,22 +1002,22 @@
     "packages-dev": [
         {
             "name": "codeigniter/coding-standard",
-            "version": "v1.4.0",
+            "version": "v1.7.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/CodeIgniter/coding-standard.git",
-                "reference": "462ba163240ac7114978a1ff6d0608be1b37eafc"
+                "reference": "b5da917b4b27df762c27671cdb8bd25fe63ff08a"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/CodeIgniter/coding-standard/zipball/462ba163240ac7114978a1ff6d0608be1b37eafc",
-                "reference": "462ba163240ac7114978a1ff6d0608be1b37eafc",
+                "url": "https://api.github.com/repos/CodeIgniter/coding-standard/zipball/b5da917b4b27df762c27671cdb8bd25fe63ff08a",
+                "reference": "b5da917b4b27df762c27671cdb8bd25fe63ff08a",
                 "shasum": ""
             },
             "require": {
                 "ext-tokenizer": "*",
-                "friendsofphp/php-cs-fixer": "^3.6",
-                "nexusphp/cs-config": "^3.4",
+                "friendsofphp/php-cs-fixer": "^3.13",
+                "nexusphp/cs-config": "^3.6",
                 "php": "^7.4 || ^8.0"
             },
             "require-dev": {
@@ -1042,13 +1042,17 @@
                 }
             ],
             "description": "Official Coding Standards for CodeIgniter based on PHP CS Fixer",
+            "keywords": [
+                "phpcs",
+                "static analysis"
+            ],
             "support": {
                 "forum": "http://forum.codeigniter.com/",
                 "issues": "https://github.com/CodeIgniter/coding-standard/issues",
                 "slack": "https://codeigniterchat.slack.com",
                 "source": "https://github.com/CodeIgniter/coding-standard"
             },
-            "time": "2022-02-09T14:08:39+00:00"
+            "time": "2022-11-01T15:39:36+00:00"
         },
         {
             "name": "composer/pcre",
