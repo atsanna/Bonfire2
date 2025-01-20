@@ -61,7 +61,7 @@
             />
 
             <input type="submit" value='<?= lang('Tools.deleteAll'); ?>' name="delete_all"
-                class="btn btn-sm btn-outline-danger" onclick="return confirm('<?= lang('Tools.deleteAll_confirm'); ?>')"
+                class="btn btn-sm btn-outline-danger" onclick="return confirm('<?= lang('Tools.deleteAllConfirm'); ?>')"
             />
         <?php endif ?>
 
