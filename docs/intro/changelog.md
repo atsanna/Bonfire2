@@ -9,7 +9,7 @@ This holds the change history for Bonfire as we lead up to a 1.0 release. It's n
 Resource Meta Info (if you have configured such) can now be included in the Admin area search (see docs page
 [Search](../building_admin_modules/search.md) for details).
 
-## 18 January 2024 (breaking change)
+## 18 January 2025 (breaking change)
 
 Possibility to have Second Factor Authentication is added to Bonfire2, implementing Codeigniter Shield
 feature.
@@ -31,7 +31,7 @@ to wrong classes:
 DELETE FROM settings WHERE class="Config\Auth" AND key="actions";
 ```
 
-## 16 January 2024
+## 16 January 2025
 
 Bonfire can henceforth warn you about breaking changes (like need to update Admin/Auth themes, change config files, etc).
 
