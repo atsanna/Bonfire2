@@ -122,7 +122,7 @@ class Install extends BaseCommand
             $this->createUser();
         }
 
-        $this->call('update:composer-json');
+        $this->updateComposerJson();
 
         CLI::newLine();
     }
