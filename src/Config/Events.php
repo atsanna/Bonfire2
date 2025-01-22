@@ -11,3 +11,7 @@ use CodeIgniter\Events\Events;
 Events::on('pre_system', static function (): void {
     Namespaces::register();
 });
+
+Events::on('pre_command', static function (): void {
+    Namespaces::register();
+});
