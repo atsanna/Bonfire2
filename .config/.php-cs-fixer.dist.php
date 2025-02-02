@@ -1,5 +1,17 @@
 <?php
 
+declare(strict_types=1);
+
+/**
+ * This file is part of Bonfire.
+ *
+ * (c) Lonnie Ezell <lonnieje@gmail.com>
+ *
+ * For the full copyright and license information, please view
+ * the LICENSE file that was distributed with this source code.
+ */
+
+use PhpCsFixer\Config;
 use PhpCsFixer\Finder;
 
 $finder = Finder::create()
@@ -23,9 +35,9 @@ $options = [
     'cacheFile' => '../build/.php-cs-fixer.cache',
 ];
 
-return (new PhpCsFixer\Config())
+return (new Config())
     ->setRules([
-        '@PSR12' => true,
+        '@PSR12'       => true,
         'array_syntax' => ['syntax' => 'short'],
     ])
     ->setCacheFile(__DIR__.'/../build/.php-cs-fixer.cache')
