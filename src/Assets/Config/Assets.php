@@ -1,5 +1,7 @@
 <?php
 
+declare(strict_types=1);
+
 /**
  * This file is part of Bonfire.
  *
@@ -33,6 +35,8 @@ class Assets extends BaseConfig
      * does increase server load as we're reading the value of the file on every
      * non-cached page load. This should probably only be used on small-medium
      * sites.
+     *
+     * @var string
      */
     public $bustingType = 'file';
 
@@ -47,6 +51,8 @@ class Assets extends BaseConfig
      * (like `~`, `-` or `_` or any combination of ASCII letters and numbers).
      * Separator will be inserted before the file version/timestamp, in between
      * the file name and file extension.
+     *
+     * @var string
      */
     public $separator = '~~';
 
@@ -59,6 +65,8 @@ class Assets extends BaseConfig
      * happen, this should be updated to reflect the changes. We do it this
      * way instead of relying on server file modification time to reduce
      * server load.
+     *
+     * @var array<string, string>
      */
     public $versions = [
         'css' => '1.0',
@@ -72,6 +80,8 @@ class Assets extends BaseConfig
      *
      * Specifies the locations that can have assets located in them.
      * This should make up the first segment of an asset URL.
+     *
+     * @var array<string, string>
      */
     public $folders = [
         'app'   => __DIR__ . '/../../../themes/App',
