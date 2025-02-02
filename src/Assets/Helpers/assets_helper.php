@@ -1,5 +1,7 @@
 <?php
 
+declare(strict_types=1);
+
 /**
  * This file is part of Bonfire.
  *
@@ -8,11 +10,12 @@
  * For the full copyright and license information, please view
  * the LICENSE file that was distributed with this source code.
  */
-if (!defined('asset_link')) {
+
+if (! defined('asset_link')) {
     /**
-     * Generates the URL to serve an asset to the client
+     * Generates the HTML tag with URL to serve an asset to the client
      *
-     * @param string $location   url to asset file
+     * @param string $location   Relative URL to asset file
      * @param string $type       css, js
      * @param mixed  $attributes Additional attributes to include in the asset link tag.
      *                           Can be provided as a string (for value-less attributes like "defer")
@@ -21,9 +24,8 @@ if (!defined('asset_link')) {
      */
     function asset_link(string $location, string $type, mixed $attributes = null): string
     {
-        $url = asset($location, $type);
-
         $tag = '';
+        $url = asset($location, $type);
 
         $additionalAttr = '';
         $defaultAttr    = $type === 'css' ? "rel='stylesheet'" : '';
@@ -31,12 +33,14 @@ if (!defined('asset_link')) {
         if (is_string($attributes)) {
             $additionalAttr = $attributes;
         }
+
         if (is_array($attributes)) {
             foreach ($attributes as $key => $value) {
                 // if the array already includes the 'rel', remove the default
                 if ($key === 'rel') {
                     $defaultAttr = '';
                 }
+
                 $additionalAttr .= "{$key}='{$value}' ";
             }
         }
@@ -57,25 +61,37 @@ if (!defined('asset_link')) {
 }
 
 if (!defined('asset')) {
+    /**
+     * Generates the URL to serve an asset to the client
+     *
+     * @param string $location Relative URL to asset file
+     * @param string $type     'file|version' string
+     */
     function asset(string $location, string $type): string
     {
-        $config   = config('Assets');
-        $location = trim($location, ' /');
+        $location     = trim($location, ' /');
+        $relativePath = parse_url($location, PHP_URL_PATH);
+
+        if (str_contains($location, '://') || $relativePath === false || $relativePath === '') {
+            throw new InvalidArgumentException('$location must be a relative URL to the file.');
+        }
 
         // Add a cache-busting fingerprint to the filename
-        $segments   = explode('/', $location);
-        $filename   = array_pop($segments);
-        $ext        = substr($filename, strrpos($filename, '.'));
-        $namelength = strlen($filename) - strlen($ext);
-        $name       = substr($filename, 0, $namelength);
+        $config   = config('Assets');
+        $segments = explode('/', ltrim($location, '/'));
+        $filename = array_pop($segments);
+        $pathinfo = pathinfo($filename);
+        $ext      = $pathinfo['extension'] ?? '';
+        $name     = $pathinfo['filename'];
 
-        if (empty($filename) || empty($ext) || $filename === $ext || $segments === []) {
+        if ($filename === '' || $name === '' || $ext === '') {
             throw new RuntimeException('You must provide a valid filename and extension to the asset() helper.');
         }
 
         // VERSION cache-busting
         $fingerprint = '';
         $separator   = $config->separator ?? '~~';
+
         if ($config->bustingType === 'version') {
             switch (ENVIRONMENT) {
                 case 'testing':
@@ -87,6 +103,7 @@ if (!defined('asset')) {
                     $fingerprint = $separator . $config->versions[$type];
             }
         }
+
         // FILE cache-busting
         if ($config->bustingType === 'file') {
             $tempSegments = $segments;
@@ -101,10 +118,11 @@ if (!defined('asset')) {
             if (!$filetime) {
                 throw new RuntimeException('Unable to get modification time of asset file: ' . $filename);
             }
+
             $fingerprint = $separator . $filetime;
         }
 
-        $filename = $name . $fingerprint . $ext;
+        $filename = $name . $fingerprint . '.' . $ext;
 
         // Stitch the location back together
         $segments[] = $filename;

@@ -1,8 +1,20 @@
 <?php
 
+declare(strict_types=1);
+
+/**
+ * This file is part of Bonfire.
+ *
+ * (c) Lonnie Ezell <lonnieje@gmail.com>
+ *
+ * For the full copyright and license information, please view
+ * the LICENSE file that was distributed with this source code.
+ */
+
 namespace Tests\Assets;
 
 use CodeIgniter\Config\Factories;
+use InvalidArgumentException;
 use RuntimeException;
 use Tests\Support\TestCase;
 
@@ -16,18 +28,32 @@ final class AssetHelperTest extends TestCase
         $this->mockCache();
         parent::setUp();
 
-        helper('Bonfire\Assets\Helpers\assets');
+        helper(['Bonfire\Assets\Helpers\assets']);
     }
 
-    public function testAssetThrowsNoFilename()
+    public function testAssetThrowsNoFilenameExtension(): void
     {
         $this->expectException(RuntimeException::class);
         $this->expectExceptionMessage('You must provide a valid filename and extension to the asset() helper.');
 
-        \asset_link('foo', 'css');
+        asset_link('foo', 'css');
     }
 
-    public function testAssetThrowsNoExtension()
+    public function testAssetThrowsNoFilename(): void
+    {
+        $this->expectException(RuntimeException::class);
+
+        asset_link('/admin/css/admin_missing.css', 'css');
+    }
+
+    public function testAssetThrowsEmptyLocation(): void
+    {
+        $this->expectException(InvalidArgumentException::class);
+
+        asset_link('/', 'css');
+    }
+
+    public function testAssetThrowsNoExtension(): void
     {
         $this->expectException(RuntimeException::class);
         $this->expectExceptionMessage('You must provide a valid filename and extension to the asset() helper.');
@@ -35,7 +61,19 @@ final class AssetHelperTest extends TestCase
         asset_link('admin/foo', 'css');
     }
 
-    public function testAssetVersion()
+    public function testAssetIfIncorrectType(): void
+    {
+        $this->assertEmpty(asset_link('/admin/css/admin.css', 'map'));
+    }
+
+    public function testAssetThrowsLocationAsFullURL(): void
+    {
+        $this->expectException(InvalidArgumentException::class);
+
+        asset_link('http://example.com/admin/css/admin.css', 'css');
+    }
+
+    public function testAssetVersion(): void
     {
         $config = config('Assets');
 
@@ -48,12 +86,14 @@ final class AssetHelperTest extends TestCase
         // In testing environment, would be the current timestamp
         // so just test the pattern to ensure that works.
         preg_match('|assets/admin/css/admin~~([\d]+).css|i', $link, $matches);
+
         $this->assertIsNumeric($matches[1]);
     }
 
-    public function testAssetFile()
+    public function testAssetFile(): void
     {
-        $config              = config('Assets');
+        $config = config('Assets');
+
         $config->bustingType = 'file';
         $config->separator   = '~~';
         Factories::injectMock('config', 'Assets', $config);
@@ -63,6 +103,7 @@ final class AssetHelperTest extends TestCase
         // In testing environment, would be the current timestamp
         // so just test the pattern to ensure that works.
         preg_match('|assets/admin/css/admin~~([\d]+).css|i', $link, $matches);
+
         $this->assertSame(filemtime(BFPATH . '../themes/Admin/css/admin.css'), (int) $matches[1]);
     }
 }
