@@ -20,7 +20,7 @@ class UserModel extends ShieldUsers
     ];
 
     protected $allowCallbacks = true;
-    protected $beforeDelete = ['deleteAvatar'];
+    protected $beforeDelete   = ['deleteAvatar'];
 
     /**
      * Performs additional setup when finding objects

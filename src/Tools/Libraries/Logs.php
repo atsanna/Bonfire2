@@ -130,7 +130,7 @@ class Logs
         // Transform the array into a string with color codes
         $result = [];
         foreach ($counts as $level => $count) {
-            $class = self::$levelClasses[$level];
+            $class    = self::$levelClasses[$level];
             $result[] = '<span class="text-' . $class . '">' . $level . '</span>: ' . $count;
         }
 
@@ -216,14 +216,14 @@ class Logs
 
         return [
             'prev' => [
-                'link' => $previousLogFileBasename,
+                'link'  => $previousLogFileBasename,
                 'label' => substr($previousLogFileBasename ?? '', 4, 10),
             ],
            'curr' => [
                 'label' => substr($currentLogFileBasename, 4, 10),
             ],
             'next' => [
-                'link' => $nextLogFileBasename,
+                'link'  => $nextLogFileBasename,
                 'label' => substr($nextLogFileBasename ?? '', 4, 10),
             ],
         ];

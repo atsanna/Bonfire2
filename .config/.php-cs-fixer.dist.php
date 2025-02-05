@@ -24,22 +24,23 @@ $finder = Finder::create()
         'build',
         'Views',
     ])
-;
-
-$overrides = [
-    'yoda_style' => ['identical' => false],
-];
-
-$options = [
-    'finder'    => $finder,
-    'cacheFile' => '../build/.php-cs-fixer.cache',
-];
+    ->append([
+        __FILE__,
+        __DIR__ . '/rector.php',
+    ]);
 
 return (new Config())
     ->setRules([
-        '@PSR12'       => true,
-        'array_syntax' => ['syntax' => 'short'],
+        '@PSR12'                 => true,
+        'array_syntax'           => ['syntax' => 'short'],
+        'binary_operator_spaces' => [
+            'operators' => [
+                '=>' => 'align_single_space_minimal',
+                '='  => 'align_single_space_minimal',
+            ],
+        ],
+        'line_ending' => false,
     ])
-    ->setCacheFile(__DIR__.'/../build/.php-cs-fixer.cache')
+    ->setCacheFile(__DIR__ . '/../build/.php-cs-fixer.cache')
     ->setFinder($finder)
 ;

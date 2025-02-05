@@ -72,7 +72,7 @@ class ConsentFilter implements FilterInterface
             ? $link
             : site_url($link);
         $policyTitle = setting('Consent.policyTitle');
-        $html = str_ireplace('{policy_url}', "<a href='{$link}' target='_blank'>{$policyTitle}</a>", $html);
+        $html        = str_ireplace('{policy_url}', "<a href='{$link}' target='_blank'>{$policyTitle}</a>", $html);
 
         $cssFile = setting('Consent.consentFormStyles');
         $jsFile  = setting('Consent.consentFormScripts');

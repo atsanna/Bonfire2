@@ -69,8 +69,8 @@ class Users extends BaseConfig
      * $avatarResizeFloor is the minimum size of an avatar (set to 32 as required by
      * toolbar avatar size)
      */
-    public $avatarResize = false;
-    public $avatarSize = 140;
+    public $avatarResize      = false;
+    public $avatarSize        = 140;
     public $avatarResizeFloor = 32;
 
     /**

@@ -56,10 +56,10 @@ class LogsController extends AdminController
                 unset($result['logs'][$i]);
                 continue;
             }
-            $logFilePath = $this->logsPath . $result['logs'][$i];
+            $logFilePath        = $this->logsPath . $result['logs'][$i];
             $result['logs'][$i] = [
                 'filename' => $result['logs'][$i],
-                'content' => $this->logsHandler->countLogLevels($logFilePath),
+                'content'  => $this->logsHandler->countLogLevels($logFilePath),
             ];
         }
 

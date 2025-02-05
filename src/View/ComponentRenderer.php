@@ -121,10 +121,10 @@ class ComponentRenderer
         do {
             try {
                 $output = preg_replace_callback($pattern, function ($match) {
-                    $view = $this->locateView($match['name']);
-                    $attributes = $this->parseAttributes($match['attributes']);
+                    $view               = $this->locateView($match['name']);
+                    $attributes         = $this->parseAttributes($match['attributes']);
                     $attributes['slot'] = $match['slot'];
-                    $component = $this->factory($match['name'], $view);
+                    $component          = $this->factory($match['name'], $view);
 
                     return $component instanceof Component
                         ? $component->withView($view)->withData($attributes)->render()
