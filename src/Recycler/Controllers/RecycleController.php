@@ -141,13 +141,13 @@ class RecycleController extends AdminController
 
         //dd($resource);
         foreach ($resource['columns'] as $colKey => $colName) {
-            $key = $resource['label'] . '.recycler.columns.' . $colName;
-            $value = lang($key);
+            $key                                   = $resource['label'] . '.recycler.columns.' . $colName;
+            $value                                 = lang($key);
             $resource['localizedColumns'][$colKey] = $key == $value ? $resource['columns'][$colKey] : $value;
         }
 
-        $key = $resource['label'] . '.recycler.label';
-        $value = lang($key);
+        $key               = $resource['label'] . '.recycler.label';
+        $value             = lang($key);
         $resource['label'] = $key == $value ? $resource['label'] : $value;
 
         return $resource;
