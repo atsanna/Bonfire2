@@ -61,4 +61,7 @@ return [
     'username'   => 'Vartotojo vardas',
     'groups'     => 'Grupės',
     'lastActive' => 'Aktyvus prieš',
+
+    // Auth links
+    'goToFrontpage' => 'Grįžti į titulinį',
 ];

@@ -145,7 +145,6 @@ class Install extends BaseCommand
         CLI::print('Creating .env file...', 'yellow');
 
         if (file_exists(ROOTPATH . '.env')) {
-
             // Note that this is not a fresh install for use later
             $this->isFreshInstall = false;
 
@@ -465,8 +464,8 @@ class Install extends BaseCommand
      */
     private function updateWelcomeMessage()
     {
-        $filePath = APPPATH . 'Views/welcome_message.php';
-        $searchString = '<!-- CONTENT -->';
+        $filePath      = APPPATH . 'Views/welcome_message.php';
+        $searchString  = '<!-- CONTENT -->';
         $replaceString = "<?php require_once(ROOTPATH . 'themes/App/_tmp_bonfire_links_include.php'); ?>";
 
         if (! file_exists($filePath)) {
@@ -475,7 +474,7 @@ class Install extends BaseCommand
         }
 
         $content = file_get_contents($filePath);
-        if (strpos($content, $searchString) === false) {
+        if (! str_contains($content, $searchString)) {
             // this can happen if the content of the file were changed upstream
             return;
         }

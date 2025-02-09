@@ -61,4 +61,7 @@ return [
     'username'   => 'Логин',
     'groups'     => 'Группы',
     'lastActive' => 'Последняя Активность',
+
+    // Auth links
+    'goToFrontpage' => 'Перейти на главную страницу',
 ];

@@ -25,6 +25,8 @@
                     </div>
 
                 </form>
+
+                <p class="text-center"><a href="<?= site_url('/') ?>"><?= lang('Bonfire.goToFrontpage') ?></a></p>
             </div>
         </x-auth-card>
     </div>

@@ -40,16 +40,16 @@
                     <div class="d-grid col-12 mx-auto m-5">
                         <button type="submit" class="btn btn-primary btn-block btn-lg"><?= lang('Auth.login') ?></button>
                     </div>
-
-                    <?php if (setting('Auth.allowMagicLinkLogins')) : ?>
-                        <p class="text-center"><?= lang('Auth.forgotPassword') ?> <a href="<?= url_to('magic-link') ?>"><?= lang('Auth.useMagicLink') ?></a></p>
-                    <?php endif ?>
-
-                    <?php if (setting('Auth.allowRegistration')) : ?>
-                        <p class="text-center"><?= lang('Auth.needAccount') ?> <a href="<?= url_to('register') ?>"><?= lang('Auth.register') ?></a></p>
-                    <?php endif ?>
-
                 </form>
+
+                <?php if (setting('Auth.allowMagicLinkLogins')) : ?>
+                    <p class="text-center"><?= lang('Auth.forgotPassword') ?> <a href="<?= url_to('magic-link') ?>"><?= lang('Auth.useMagicLink') ?></a></p>
+                <?php endif ?>
+
+                <?php if (setting('Auth.allowRegistration')) : ?>
+                    <p class="text-center"><?= lang('Auth.needAccount') ?> <a href="<?= url_to('register') ?>"><?= lang('Auth.register') ?></a></p>
+                <?php endif ?>
+                <p class="text-center"><a href="<?= site_url('/') ?>"><?= lang('Bonfire.goToFrontpage') ?></a></p>
             </div>
         </x-auth-card>
     </div>
