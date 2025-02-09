@@ -110,6 +110,7 @@ class Install extends BaseCommand
         if (! CLI::getOption('continue')) {
             $this->ensureEnvFile();
             $this->setAppUrl();
+            $this->removeIndexDotPhp();
             $this->setEncryptionKey();
             $this->setDatabase();
             $this->publishConfigFiles();
@@ -175,7 +176,7 @@ class Install extends BaseCommand
     private function setAppUrl()
     {
         CLI::newLine();
-        $url = CLI::prompt('What URL are you running Bonfire under locally?');
+        $url = CLI::prompt('What URL are you running Bonfire under locally? Default: ', 'http://localhost:8080');
 
         if (! str_contains($url, 'http://') && ! str_contains($url, 'https://')) {
             $url = 'http://' . $url;
@@ -186,11 +187,20 @@ class Install extends BaseCommand
 
     private function setDatabase()
     {
-        $host   = '';
-        $user   = '';
-        $pass   = '';
-        $driver = CLI::prompt('Database driver:', ['MySQLi', 'Postgre', 'SQLite3', 'SQLSRV']);
-        $name   = CLI::prompt('Database name:', 'bonfire');
+        $host = '';
+        $user = '';
+        $pass = '';
+
+        $options = [
+            '1' => 'MySQLi',
+            '2' => 'Postgre',
+            '3' => 'SQLite3',
+            '4' => 'SQLSRV',
+        ];
+        $driverKey = CLI::promptByKey('Database driver:', $options, 'required|in_list[1,2,3,4]');
+        $driver    = $options[$driverKey];
+
+        $name = CLI::prompt('Database name:', 'bonfire');
         if ($driver !== 'SQLite3') {
             $host = CLI::prompt('Database host:', 'localhost');
             $user = CLI::prompt('Database username:', 'root');
@@ -295,7 +305,15 @@ class Install extends BaseCommand
 
         $user->addGroup('superadmin');
 
-        CLI::write('Done. You can now login as a superadmin.', 'green');
+        CLI::newLine();
+        CLI::write('DONE. Assuming you took care of the database, you can now start the app using' . PHP_EOL . "\tphp spark serve " . PHP_EOL . 'command and open the website in browser.', 'green');
+        CLI::newLine();
+        CLI::write("Application front-page URL: {$this->getAppUrl()}", 'green');
+        CLI::write('To login as superadmin, visit the ' . $this->getAppUrl() . '/login page.', 'green');
+        CLI::newLine();
+        CLI::write('If you want to create some data for testing, you can insert 100 users by runing ', 'yellow');
+
+        CLI::write("\tphp spark db:seed Bonfire\\\\Users\\\\Database\\\\Seeds\\\\Seed100Users", 'yellow');
     }
 
     /**
@@ -485,5 +503,37 @@ class Install extends BaseCommand
         } else {
             CLI::error('Error updating welcome_message.php.');
         }
+    }
+
+    private function removeIndexDotPhp()
+    {
+        $response = CLI::prompt('Do you want to delete index.php from the baseURL?', ['y', 'n']);
+
+        if (strtolower($response) !== 'y') {
+            CLI::write('Skipping removal of index.php from baseURL.', 'yellow');
+
+            return;
+        }
+        $envFile = ROOTPATH . '.env';
+        $lines   = file($envFile, FILE_IGNORE_NEW_LINES);
+
+        $newLines = [];
+
+        foreach ($lines as $line) {
+            if (str_starts_with($line, 'app.baseURL')) {
+                $newLines[] = "app.indexPage = ''";
+            }
+            $newLines[] = $line;
+        }
+
+        file_put_contents($envFile, implode(PHP_EOL, $newLines));
+    }
+
+    private function getAppUrl(): string
+    {
+        $env = file_get_contents(ROOTPATH . '.env');
+        preg_match('/^app\.baseURL\s*=\s*[\'"]([^\'"]+)[\'"]/m', $env, $matches);
+
+        return $matches[1] ?? 'http://localhost:8080';
     }
 }
