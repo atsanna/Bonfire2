@@ -3,7 +3,7 @@
 namespace Tests\Auth;
 
 use CodeIgniter\Config\Factories;
-use CodeIgniter\Router\Exceptions\RedirectException;
+use CodeIgniter\HTTP\Exceptions\RedirectException;
 use CodeIgniter\Test\DatabaseTestTrait;
 use Exception;
 use Tests\Support\TestCase;

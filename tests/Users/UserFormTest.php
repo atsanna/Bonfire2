@@ -3,7 +3,7 @@
 namespace Tests\Users;
 
 use Bonfire\Users\User;
-use CodeIgniter\Router\Exceptions\RedirectException;
+use CodeIgniter\HTTP\Exceptions\RedirectException;
 use Exception;
 use Tests\Support\TestCase;
 
