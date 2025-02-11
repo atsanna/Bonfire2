@@ -42,8 +42,6 @@ class ChartsCollection extends ChartsItem
 
     /**
      * Adds a single item to the menu.
-     *
-     * @return $this
      */
     public function addItem(ChartsItem $item): ChartsCollection
     {
@@ -54,8 +52,6 @@ class ChartsCollection extends ChartsItem
 
     /**
      * Add multiple items at once.
-     *
-     * @return $this
      */
     public function addItems(array $items): ChartsCollection
     {
@@ -67,6 +63,7 @@ class ChartsCollection extends ChartsItem
     public function removeItem(string $title)
     {
         $counter = count($this->items);
+
         for ($i = 0; $i < $counter; $i++) {
             if ($this->items[$i]->title() === $title) {
                 unset($this->items[$i]);
@@ -77,8 +74,6 @@ class ChartsCollection extends ChartsItem
 
     /**
      * Removes all of the items from this collection.
-     *
-     * @return $this
      */
     public function removeAllItems(): ChartsCollection
     {

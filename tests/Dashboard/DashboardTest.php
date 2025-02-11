@@ -11,12 +11,7 @@ use Tests\Support\TestCase;
 final class DashboardTest extends TestCase
 {
     protected $refresh = true;
-    protected $namespace;
-
-    /**
-     * @var User
-     */
-    protected $user;
+    private User $user;
 
     protected function setUp(): void
     {

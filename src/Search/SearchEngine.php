@@ -26,7 +26,7 @@ class SearchEngine
         $providers = $this->locateProviders();
         $term      = isset($post['search_term']) ? trim($post['search_term']) : null;
 
-        if (empty($term)) {
+        if ($term === null || $term === '' || $term === '0') {
             return;
         }
 

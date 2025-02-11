@@ -76,8 +76,8 @@ final class StatsTest extends TestCase
 
     public function testGetCollection()
     {
-        $widget   = new Stats();
-        $collect1 = $widget->createCollection('test1');
+        $widget = new Stats();
+        $widget->createCollection('test1');
         $collect2 = $widget->createCollection('test2');
 
         $found = $widget->collection('test2');

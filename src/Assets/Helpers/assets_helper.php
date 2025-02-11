@@ -10,7 +10,6 @@ declare(strict_types=1);
  * For the full copyright and license information, please view
  * the LICENSE file that was distributed with this source code.
  */
-
 if (! defined('asset_link')) {
     /**
      * Generates the HTML tag with URL to serve an asset to the client
@@ -60,7 +59,7 @@ if (! defined('asset_link')) {
     }
 }
 
-if (!defined('asset')) {
+if (! defined('asset')) {
     /**
      * Generates the URL to serve an asset to the client
      *
@@ -92,32 +91,22 @@ if (!defined('asset')) {
         $separator    = $config->separator ?? '~~';
         $tempSegments = $segments;
         array_shift($tempSegments);
-        $path = rtrim($config->folders[current($segments)], ' /') . '/' . implode(
+        $path = rtrim((string) $config->folders[current($segments)], ' /') . '/' . implode(
             '/',
-            $tempSegments
+            $tempSegments,
         ) . '/' . $filename;
 
         if (! file_exists($path)) { // Possible case of missing asset
-
             $fingerprint = $separator . 'asset-is-missing';
             log_message('warning', 'Missing asset: ' . $path);
-
         } elseif ($config->bustingType === 'version') { // Asset version-based cache-busting
-
-            switch (ENVIRONMENT) {
-                case 'testing':
-                case 'development':
-                    $fingerprint = $separator . time();
-                    break;
-
-                default:
-                    $fingerprint = $separator . $config->versions[$type];
-            }
-
+            $fingerprint = match (ENVIRONMENT) {
+                'testing', 'development' => $separator . time(),
+                default => $separator . $config->versions[$type],
+            };
         } elseif ($config->bustingType === 'file') { // Mod time-based cache-busting
-
             $filetime = filemtime($path);
-            if (!$filetime) {
+            if (! $filetime) {
                 throw new RuntimeException('Unable to get modification time of asset file: ' . $filename);
             }
             $fingerprint = $separator . $filetime;

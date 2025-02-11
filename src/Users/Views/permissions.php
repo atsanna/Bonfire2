@@ -42,7 +42,7 @@
                                 <?php if (
                                     ! $user->hasPermission($permission)
                                     && ! auth()->user()->can('users.manage-admins')
-                                    && explode('.', $permission)[0] === 'users'
+                                    && explode('.', (string) $permission)[0] === 'users'
                                 ) :
                                     ?>
                                 disabled

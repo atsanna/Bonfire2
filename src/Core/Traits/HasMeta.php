@@ -190,7 +190,7 @@ trait HasMeta
             return;
         }
 
-        foreach ($metaInfo as $group => $fields) {
+        foreach ($metaInfo as $fields) {
             if (! is_array($fields) || $fields === []) {
                 continue;
             }
@@ -199,7 +199,7 @@ trait HasMeta
             $updates = [];
             $deletes = [];
 
-            foreach ($fields as $field => $info) {
+            foreach (array_keys($fields) as $field) {
                 $field    = strtolower($field);
                 $existing = array_key_exists($field, $this->meta);
 
@@ -270,14 +270,14 @@ trait HasMeta
             return $rules;
         }
 
-        foreach ($metaInfo as $group => $rows) {
+        foreach ($metaInfo as $rows) {
             if (! count($rows)) {
                 continue;
             }
 
             foreach ($rows as $name => $row) {
                 $name = strtolower($name);
-                if (! empty($prefix)) {
+                if ($prefix !== null && $prefix !== '' && $prefix !== '0') {
                     $name = "{$prefix}.{$name}";
                 }
 

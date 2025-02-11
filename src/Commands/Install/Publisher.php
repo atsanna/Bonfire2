@@ -16,7 +16,7 @@ use CodeIgniter\CLI\CLI;
 class Publisher
 {
     private string $destination;
-    private FileLocator $locator;
+    private readonly FileLocator $locator;
 
     public function __construct()
     {

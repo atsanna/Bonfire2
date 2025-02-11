@@ -11,12 +11,7 @@ use Tests\Support\TestCase;
 final class GeneralSettingsTest extends TestCase
 {
     protected $refresh = true;
-    protected $namespace;
-
-    /**
-     * @var User
-     */
-    protected $user;
+    private User $user;
 
     protected function setUp(): void
     {
@@ -52,6 +47,6 @@ final class GeneralSettingsTest extends TestCase
         $response->assertRedirect();
 
         $this->assertSame('My Great Site', setting('Site.siteName'));
-        $this->assertTrue(setting('Site.siteOnline') === '1');
+        $this->assertSame('1', setting('Site.siteOnline'));
     }
 }

@@ -11,17 +11,8 @@ use Tests\Support\TestCase;
 final class SiteOfflineTest extends TestCase
 {
     protected $refresh = true;
-    protected $namespace;
-
-    /**
-     * @var User
-     */
-    protected $admin;
-
-    /**
-     * @var User
-     */
-    protected $nonAdmin;
+    private User $admin;
+    private User $nonAdmin;
 
     protected function setUp(): void
     {

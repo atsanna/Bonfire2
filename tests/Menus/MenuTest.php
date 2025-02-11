@@ -69,8 +69,8 @@ final class MenuTest extends TestCase
 
     public function testGetCollection()
     {
-        $menu     = new Menu();
-        $collect1 = $menu->createCollection('collect-1', 'Collect 1');
+        $menu = new Menu();
+        $menu->createCollection('collect-1', 'Collect 1');
         $collect2 = $menu->createCollection('collect-2', 'Collect 2');
 
         $found = $menu->collection('collect-2');

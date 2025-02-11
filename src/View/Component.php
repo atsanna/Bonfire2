@@ -51,8 +51,6 @@ class Component
 
     /**
      * Set the data that should be passed along to the view.
-     *
-     * @return $this
      */
     public function withData(array $data): Component
     {
@@ -78,6 +76,7 @@ class Component
             extract($data);
             ob_start();
             eval('?>' . file_get_contents($view));
+
             return ob_get_clean() ?: '';
         })($view, $data);
     }

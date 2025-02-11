@@ -12,17 +12,8 @@ use Tests\Support\TestCase;
 final class RecyclerTest extends TestCase
 {
     protected $refresh = true;
-    protected $namespace;
-
-    /**
-     * @var User
-     */
-    protected $admin;
-
-    /**
-     * @var UserModel
-     */
-    protected $users;
+    private User $admin;
+    private UserModel $users;
 
     protected function setUp(): void
     {
@@ -54,9 +45,8 @@ final class RecyclerTest extends TestCase
         $user1 = $this->createUser();
         $this->users->delete($user1->id);
 
-        $result = $this->actingAs($this->admin)
+        $this->actingAs($this->admin)
             ->get(route_to('recycler-restore', 'users', $user1->id));
-
 
         $this->seeInDatabase('users', [
             'id'         => $user1->id,
@@ -69,7 +59,7 @@ final class RecyclerTest extends TestCase
         $user1 = $this->createUser();
         $this->users->delete($user1->id);
 
-        $result = $this->actingAs($this->admin)
+        $this->actingAs($this->admin)
             ->get(route_to('recycler-purge', 'users', $user1->id));
 
         $this->dontSeeInDatabase('users', [

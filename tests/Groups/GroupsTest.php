@@ -12,12 +12,7 @@ use Tests\Support\TestCase;
 final class GroupsTest extends TestCase
 {
     protected $refresh = true;
-    protected $namespace;
-
-    /**
-     * @var User
-     */
-    protected $user;
+    private User $user;
 
     protected function setUp(): void
     {

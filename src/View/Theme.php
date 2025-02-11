@@ -49,7 +49,7 @@ class Theme
      */
     public static function path(?string $theme = null): string
     {
-        if (empty($theme)) {
+        if ($theme === null || $theme === '' || $theme === '0') {
             $theme = static::current();
         }
 

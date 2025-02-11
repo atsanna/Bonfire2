@@ -96,7 +96,7 @@ trait HasMenuIcons
      */
     protected function buildFontAwesomeIconTag(string $className): string
     {
-        $class = empty($className) ? '' : " {$className}";
+        $class = $className === '' || $className === '0' ? '' : " {$className}";
 
         return "<i class=\"{$this->faIcon}{$class}\"></i>";
     }
@@ -110,9 +110,9 @@ trait HasMenuIcons
      */
     protected function buildImageIconTag(string $class): string
     {
-        $class = empty($class) ? '' : "class=\"{$class}\" ";
+        $class = $class === '' || $class === '0' ? '' : "class=\"{$class}\" ";
 
-        $iconUrl = strpos($this->iconUrl, '://') !== false
+        $iconUrl = str_contains($this->iconUrl, '://')
             ? $this->iconUrl
             : '/' . ltrim($this->iconUrl, '/ ');
 

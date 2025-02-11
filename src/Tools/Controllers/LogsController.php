@@ -44,7 +44,7 @@ class LogsController extends AdminController
         // Define the regular expression pattern for log files
         $logPattern = '/^log-\d{4}-\d{2}-\d{2}\.log$/';
         // Filter the array removing index.html and other files that do not match
-        $logs = array_filter($logs, static fn ($filename) => preg_match($logPattern, $filename));
+        $logs = array_filter($logs, static fn ($filename) => preg_match($logPattern, (string) $filename));
 
         $result = $this->logsHandler->paginateLogs($logs, $this->logsLimit);
         // Cycle through the $result array and attach the content property
@@ -54,6 +54,7 @@ class LogsController extends AdminController
         for ($i = 0; $i < $counter; $i++) {
             if ($result['logs'][$i] === 'index.html') {
                 unset($result['logs'][$i]);
+
                 continue;
             }
             $logFilePath        = $this->logsPath . $result['logs'][$i];
@@ -114,7 +115,7 @@ class LogsController extends AdminController
         if (empty($delete) && empty($deleteAll)) {
             return redirect()->to(ADMIN_AREA . '/tools/logs')->with(
                 'error',
-                lang('Bonfire.resourcesNotFound', ['logs'])
+                lang('Bonfire.resourcesNotFound', ['logs']),
             );
         }
 

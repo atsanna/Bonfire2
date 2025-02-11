@@ -71,7 +71,7 @@ class ResourceTab
 
         $url = $this->url;
 
-        if (strpos($this->url, '(id)') !== false) {
+        if (str_contains($this->url, '(id)')) {
             $url = $this->fillPlaceholder($url);
         }
 
@@ -95,7 +95,7 @@ class ResourceTab
         // Parse out the current resource ID - $matches[1] should contain it
         preg_match("|{$path}\\/([0-9]+)|i", current_url(), $matches);
 
-        if (isset($matches[1]) && ! empty($matches[1])) {
+        if (isset($matches[1]) && (isset($matches[1]) && ($matches[1] !== '' && $matches[1] !== '0'))) {
             return str_replace('(id)', $matches[1], $url);
         }
 

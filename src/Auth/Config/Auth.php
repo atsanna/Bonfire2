@@ -2,7 +2,7 @@
 
 namespace Bonfire\Auth\Config;
 
-use CodeIgniter\Config\BaseConfig;
+use Bonfire\Users\Models\UserModel;
 use CodeIgniter\Shield\Authentication\Actions\ActionInterface;
 use CodeIgniter\Shield\Authentication\AuthenticatorInterface;
 use CodeIgniter\Shield\Authentication\Authenticators\AccessTokens;
@@ -14,7 +14,6 @@ use CodeIgniter\Shield\Authentication\Passwords\DictionaryValidator;
 use CodeIgniter\Shield\Authentication\Passwords\NothingPersonalValidator;
 use CodeIgniter\Shield\Authentication\Passwords\PwnedValidator;
 use CodeIgniter\Shield\Authentication\Passwords\ValidatorInterface;
-use Bonfire\Users\Models\UserModel;
 use CodeIgniter\Shield\Config\Auth as ShieldAuth;
 
 class Auth extends ShieldAuth
@@ -130,7 +129,7 @@ class Auth extends ShieldAuth
      * when using the 'chain' filter. Each Authenticator listed will be checked.
      * If no match is found, then the next in the chain will be checked.
      *
-     * @var string[]
+     * @var         list<string>
      * @phpstan-var list<string>
      */
     public array $authenticationChain = [
@@ -502,23 +501,13 @@ class Auth extends ShieldAuth
      */
     protected function getUrl(string $url): string
     {
-        // To accommodate all url patterns
-        $final_url = '';
-
-        switch (true) {
-            case strpos($url, 'http://') === 0 || strpos($url, 'https://') === 0: // URL begins with 'http' or 'https'. E.g. http://example.com
-                $final_url = $url;
-                break;
-
-            case route_to($url) !== false: // URL is a named-route
-                $final_url = rtrim(url_to($url), '/ ');
-                break;
-
-            default: // URL is a route (URI path)
-                $final_url = rtrim(site_url($url), '/ ');
-                break;
-        }
-
-        return $final_url;
+        return match (true) {
+            // URL begins with 'http' or 'https'. E.g. http://example.com
+            str_starts_with($url, 'http://') || str_starts_with($url, 'https://') => $url,
+            // URL is a named-route
+            route_to($url) !== false => rtrim(url_to($url), '/ '),
+            // URL is a route (URI path)
+            default => rtrim(site_url($url), '/ '),
+        };
     }
 }

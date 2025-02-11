@@ -26,10 +26,8 @@ class Bonfire
 {
     /**
      * Holds cached instances of all Module classes
-     *
-     * @var array
      */
-    private $moduleConfigs = [];
+    private array $moduleConfigs = [];
 
     /**
      * Are we currently in the admin area?
@@ -72,7 +70,7 @@ class Bonfire
 
         $path = parse_url($url, PHP_URL_PATH);
 
-        $this->inAdmin = strpos($path, ADMIN_AREA) !== false;
+        $this->inAdmin = str_contains($path, ADMIN_AREA);
     }
 
     /**
@@ -177,7 +175,7 @@ class Bonfire
                     continue;
                 }
 
-                $dir = rtrim($dir, DIRECTORY_SEPARATOR);
+                $dir = rtrim((string) $dir, DIRECTORY_SEPARATOR);
                 $map = directory_map($dir, 1);
 
                 foreach ($map as $row) {

@@ -10,10 +10,7 @@ use Tests\Support\TestCase;
  */
 final class MetadataTest extends TestCase
 {
-    /**
-     * @var \Bonfire\View\Metadata
-     */
-    protected $meta;
+    private Metadata $meta;
 
     protected function setUp(): void
     {
@@ -32,7 +29,7 @@ final class MetadataTest extends TestCase
         $this->assertSame(
             '<meta charset="UTF-8" >' . "\n" .
             '<meta name="viewport" content="width=device-width, initial-scale=1" >' . "\n",
-            $this->meta->render('meta')
+            $this->meta->render('meta'),
         );
     }
 

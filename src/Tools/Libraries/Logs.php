@@ -24,7 +24,7 @@ class Logs
     public const LOG_DATE_PATTERN       = ['/^((DEBUG)|(INFO)|(NOTICE)|(WARNING)|(ERROR)|(CRITICAL)|(ALERT)|(EMERGENCY))\\s\\-\\s/', '/\\s(-->)/'];
     public const LOG_LEVEL_PATTERN      = '/^((DEBUG)|(INFO)|(NOTICE)|(WARNING)|(ERROR)|(CRITICAL)|(ALERT)|(EMERGENCY))/';
 
-    private static $levelsIcon = [
+    private static array $levelsIcon = [
         'DEBUG'     => 'fas fa-bug',
         'INFO'      => 'fas fa-info-circle',
         'NOTICE'    => 'fas fa-info-circle',
@@ -34,7 +34,7 @@ class Logs
         'ALERT'     => 'fas fa-exclamation-triangle',
         'EMERGENCY' => 'fas fa-exclamation-triangle',
     ];
-    private static $levelClasses = [
+    private static array $levelClasses = [
         'DEBUG'     => 'warning',
         'INFO'      => 'info',
         'NOTICE'    => 'info',
@@ -57,7 +57,7 @@ class Logs
      * */
     public function processFileLogs($file)
     {
-        if (null === $file) {
+        if ($file === null) {
             return [];
         }
 
@@ -79,11 +79,11 @@ class Logs
                     'class' => self::$levelClasses[$level],
                 ];
 
-                $logMessage = preg_replace(self::LOG_LINE_START_PATTERN, '', $log);
+                $logMessage = preg_replace(self::LOG_LINE_START_PATTERN, '', (string) $log);
 
-                if (strlen($logMessage) > self::MAX_STRING_LENGTH) {
-                    $data['content'] = substr($logMessage, 0, self::MAX_STRING_LENGTH);
-                    $data['extra']   = substr($logMessage, (self::MAX_STRING_LENGTH + 1));
+                if (strlen((string) $logMessage) > self::MAX_STRING_LENGTH) {
+                    $data['content'] = substr((string) $logMessage, 0, self::MAX_STRING_LENGTH);
+                    $data['extra']   = substr((string) $logMessage, (self::MAX_STRING_LENGTH + 1));
                 } else {
                     $data['content'] = $logMessage;
                 }
@@ -126,9 +126,9 @@ class Logs
 
         $counts = array_reverse($counts);
 
-
         // Transform the array into a string with color codes
         $result = [];
+
         foreach ($counts as $level => $count) {
             $class    = self::$levelClasses[$level];
             $result[] = '<span class="text-' . $class . '">' . $level . '</span>: ' . $count;
@@ -136,7 +136,6 @@ class Logs
 
         return strtolower(implode(', ', $result));
     }
-
 
     /**
      * returns an array of the file contents
@@ -181,15 +180,18 @@ class Logs
     /**
      * Retrieves the adjacent log files (previous and next) relative to the given log file.
      *
-     * @param string $currentFile The current log file name.
-     * @param array $logFiles An array of all log file names.
+     * @param string $currentFile            The current log file name.
+     * @param array  $logFiles               An array of all log file names.
+     * @param mixed  $currentLogFileBasename
+     * @param mixed  $logsPath
+     *
      * @return array An associative array with 'previous' and 'next' keys containing the respective log file names, or null if not available.
      */
     public function getAdjacentLogFiles($currentLogFileBasename, $logsPath): array
     {
         // Extract the date from the current log file name
-        preg_match('/log-(\d{4}-\d{2}-\d{2})/', $currentLogFileBasename, $matches);
-        $currentDate = new DateTime($matches[1]);
+        preg_match('/log-(\d{4}-\d{2}-\d{2})/', (string) $currentLogFileBasename, $matches);
+        new DateTime($matches[1]);
 
         // Retrieve the list of log files in the directory
         $logFiles = glob($logsPath . '/log-*.log');
@@ -207,7 +209,7 @@ class Logs
         });
 
         // Find the index of the current log file
-        $currentLogFileName = basename($currentLogFileBasename, '.log');
+        $currentLogFileName = basename((string) $currentLogFileBasename, '.log');
         $currentIndex       = array_search($currentLogFileName, $logDates, true);
 
         // Determine the next and previous log files based on the index
@@ -219,8 +221,8 @@ class Logs
                 'link'  => $previousLogFileBasename,
                 'label' => substr($previousLogFileBasename ?? '', 4, 10),
             ],
-           'curr' => [
-                'label' => substr($currentLogFileBasename, 4, 10),
+            'curr' => [
+                'label' => substr((string) $currentLogFileBasename, 4, 10),
             ],
             'next' => [
                 'link'  => $nextLogFileBasename,
@@ -246,12 +248,12 @@ class Logs
 
     private function getLogDate($logLineStart)
     {
-        return preg_replace(self::LOG_DATE_PATTERN, '', $logLineStart);
+        return preg_replace(self::LOG_DATE_PATTERN, '', (string) $logLineStart);
     }
 
     private function getLogLineStart($logLine)
     {
-        preg_match(self::LOG_LINE_START_PATTERN, $logLine, $matches);
+        preg_match(self::LOG_LINE_START_PATTERN, (string) $logLine, $matches);
         if ($matches !== []) {
             return $matches[0];
         }

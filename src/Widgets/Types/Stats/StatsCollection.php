@@ -31,9 +31,6 @@ class StatsCollection extends StatsItem
      */
     protected $name;
 
-    /**
-     * @return $this
-     */
     public function setName(string $name): StatsCollection
     {
         $this->name = $name;
@@ -48,8 +45,6 @@ class StatsCollection extends StatsItem
 
     /**
      * Adds a single item to the menu.
-     *
-     * @return $this
      */
     public function addItem(StatsItem $item): StatsCollection
     {
@@ -60,8 +55,6 @@ class StatsCollection extends StatsItem
 
     /**
      * Add multiple items at once.
-     *
-     * @return $this
      */
     public function addItems(array $items): StatsCollection
     {
@@ -76,6 +69,7 @@ class StatsCollection extends StatsItem
     public function removeItem(string $title)
     {
         $counter = count($this->items);
+
         for ($i = 0; $i < $counter; $i++) {
             if ($this->items[$i]->title() === $title) {
                 unset($this->items[$i]);
@@ -86,8 +80,6 @@ class StatsCollection extends StatsItem
 
     /**
      * Removes all of the items from this collection.
-     *
-     * @return $this
      */
     public function removeAllItems(): StatsCollection
     {

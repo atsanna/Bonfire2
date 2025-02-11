@@ -15,11 +15,7 @@ final class SearchProviderTest extends TestCase
 
     protected $refresh = true;
     protected $namespace;
-
-    /**
-     * @var SearchProvider
-     */
-    protected $provider;
+    private SearchProvider $provider;
 
     protected function setUp(): void
     {

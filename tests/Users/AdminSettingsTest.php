@@ -11,11 +11,7 @@ use Tests\Support\TestCase;
 final class AdminSettingsTest extends TestCase
 {
     protected $refresh = true;
-
-    /**
-     * @var User
-     */
-    protected $user;
+    private User $user;
 
     protected function setUp(): void
     {
