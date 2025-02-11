@@ -51,7 +51,7 @@ return static function (RectorConfig $rectorConfig): void {
     // The paths to refactor (can also be supplied with CLI arguments)
     $rectorConfig->paths([
         __DIR__ . '/src/',
-        // __DIR__ . '/tests/',
+        __DIR__ . '/tests/',
     ]);
 
     // Include Composer's autoload - required for global execution, remove if running locally
