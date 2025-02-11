@@ -74,6 +74,8 @@
         -->
 		<!-- Suppress deprecated warnings -->
 		<ini name="error_reporting" value="E_ALL &amp; ~E_DEPRECATED"/>
+		<!-- Set hashCost for improving the speed of running tests -->
+		<env name="auth.hashCost" value="4"/>
 	</php>
 	<source>
 		<include>
