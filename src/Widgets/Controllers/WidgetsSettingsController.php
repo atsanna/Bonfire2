@@ -11,8 +11,8 @@
 
 namespace Bonfire\Widgets\Controllers;
 
-use CodeIgniter\HTTP\RedirectResponse;
 use Bonfire\Core\AdminController;
+use CodeIgniter\HTTP\RedirectResponse;
 
 class WidgetsSettingsController extends AdminController
 {
@@ -56,34 +56,15 @@ class WidgetsSettingsController extends AdminController
             return redirect()->to(ADMIN_AREA)->with('error', lang('Bonfire.notAuthorized'));
         }
 
-        switch ($this->request->getVar('widget')) {
-            case 'stats':
-                $this->saveStatsSettings();
-                break;
-
-            case 'linechart':
-                $this->saveLineSettings();
-                break;
-
-            case 'barchart':
-                $this->saveBarSettings();
-                break;
-
-            case 'doughnutchart':
-                $this->saveDoughnutSettings();
-                break;
-
-            case 'piechart':
-                $this->savePieSettings();
-                break;
-
-            case 'polarareachart':
-                $this->savePolarAreaSettings();
-                break;
-
-            default:
-                $this->saveWidgetSettings();
-        }
+        match ($this->request->getVar('widget')) {
+            'stats'          => $this->saveStatsSettings(),
+            'linechart'      => $this->saveLineSettings(),
+            'barchart'       => $this->saveBarSettings(),
+            'doughnutchart'  => $this->saveDoughnutSettings(),
+            'piechart'       => $this->savePieSettings(),
+            'polarareachart' => $this->savePolarAreaSettings(),
+            default          => $this->saveWidgetSettings(),
+        };
 
         alert('success', 'The settings have been saved.');
 

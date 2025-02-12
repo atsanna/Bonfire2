@@ -10,15 +10,8 @@ use Tests\Support\TestCase;
  */
 final class LogsTest extends TestCase
 {
-    /**
-     * @var string
-     */
-    protected $logFileName;
-
-    /**
-     * @var string
-     */
-    protected $logsPath = WRITEPATH . 'logs/';
+    private string $logFileName;
+    private string $logsPath = WRITEPATH . 'logs/';
 
     protected function setUp(): void
     {

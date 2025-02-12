@@ -68,7 +68,7 @@ class ConsentFilter implements FilterInterface
         ]);
         // Replace {policy_url} with the actual link.
         $link = setting('Consent.policyUrl');
-        $link = strpos('http', (string) $link) === 0
+        $link = str_starts_with('http', (string) $link)
             ? $link
             : site_url($link);
         $policyTitle = setting('Consent.policyTitle');

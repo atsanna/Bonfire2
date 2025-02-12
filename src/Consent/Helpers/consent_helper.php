@@ -35,7 +35,7 @@ if (! function_exists('has_consent')) {
             return false;
         }
 
-        $permissions = json_decode($cookie, true);
+        $permissions = json_decode((string) $cookie, true);
 
         if (! is_array($permissions) || ! array_key_exists($group, $permissions)) {
             return false;

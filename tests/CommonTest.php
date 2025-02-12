@@ -3,6 +3,7 @@
 namespace Tests\Bonfire;
 
 use CodeIgniter\I18n\Time;
+use PHPUnit\Framework\Attributes\DataProvider;
 use Tests\Support\TestCase;
 
 /**
@@ -17,7 +18,7 @@ final class CommonTest extends TestCase
         helper('setting');
     }
 
-    public function appDateProvider()
+    public static function provideAppDate(): iterable
     {
         return [
             ['m/d/Y', 'g:i A', false, '01/15/2021'],
@@ -28,9 +29,7 @@ final class CommonTest extends TestCase
         ];
     }
 
-    /**
-     * @dataProvider appDateProvider
-     */
+    #[DataProvider('provideAppDate')]
     public function testAppDate(string $format, string $timeFormat, bool $includeTime, string $expected)
     {
         $time = '2021-01-15 15:32:00';

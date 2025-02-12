@@ -1,0 +1,23 @@
+name: Rector
+
+on:
+  pull_request:
+    branches:
+      - develop
+    paths:
+      - '**.php'
+      - 'composer.*'
+      - 'rector.php'
+      - '.github/workflows/rector.yml'
+  push:
+    branches:
+      - develop
+    paths:
+      - '**.php'
+      - 'composer.*'
+      - 'rector.php'
+      - '.github/workflows/rector.yml'
+
+jobs:
+  rector:
+    uses: codeigniter4/.github/.github/workflows/rector.yml@CI46

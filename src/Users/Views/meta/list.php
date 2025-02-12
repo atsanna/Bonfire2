@@ -8,9 +8,9 @@
             <?php foreach ($fields as $field => $info) : ?>
                 <?php if ($info['type'] === 'checkbox') : ?>
                     <div class="form-check col-12 col-md-6 mt-3">
-                        <input type="hidden" name="meta[<?= strtolower($field) ?>]" value="false">
-                        <input type="checkbox" class="form-check-input" name="meta[<?= strtolower($field) ?>]"
-                            value="true" <?= set_checkbox('meta.' . strtolower($field), 'true', ($user->meta(strtolower($field))) === 'true') ?>>
+                        <input type="hidden" name="meta[<?= strtolower((string) $field) ?>]" value="false">
+                        <input type="checkbox" class="form-check-input" name="meta[<?= strtolower((string) $field) ?>]"
+                            value="true" <?= set_checkbox('meta.' . strtolower((string) $field), 'true', ($user->meta(strtolower((string) $field))) === 'true') ?>>
                         <?php if (!isset($info['label'])) : ?>
                             <label for="meta[<?= $field ?>]"
                                    class="form-check-label"><?= esc(ucwords(strtolower(str_replace(['-', '_'], ' ', $field)))) ?></label>
@@ -25,8 +25,8 @@
                         <?php else : ?>
                             <label for="meta[<?= $field ?>]" class="form-label"><?= esc($info['label']) ?></label>
                         <?php endif ?>
-                        <textarea class="form-control" rows="3" name="meta[<?= strtolower($field) ?>]"
-                            ><?= old('meta.' . strtolower($field), $user->meta(strtolower($field)) ?? '') ?></textarea>
+                        <textarea class="form-control" rows="3" name="meta[<?= strtolower((string) $field) ?>]"
+                            ><?= old('meta.' . strtolower((string) $field), $user->meta(strtolower((string) $field)) ?? '') ?></textarea>
                         <?php if (has_error('meta.' . $field)) : ?>
                             <p class="text-danger"><?= error('meta.' . $field) ?></p>
                         <?php endif ?>
@@ -38,8 +38,8 @@
                         <?php else : ?>
                             <label for="meta[<?= $field ?>]" class="form-label"><?= esc($info['label']) ?></label>
                         <?php endif ?>
-                            <input type="<?= $info['type'] ?>" name="meta[<?= strtolower($field) ?>]" class="form-control" autocomplete="<?= strtolower($field) ?>"
-                                value="<?= old('meta.' . strtolower($field), $user->meta(strtolower($field)) ?? '') ?>">
+                            <input type="<?= $info['type'] ?>" name="meta[<?= strtolower((string) $field) ?>]" class="form-control" autocomplete="<?= strtolower((string) $field) ?>"
+                                value="<?= old('meta.' . strtolower((string) $field), $user->meta(strtolower((string) $field)) ?? '') ?>">
                         <?php if (has_error('meta.' . $field)) : ?>
                             <p class="text-danger"><?= error('meta.' . $field) ?></p>
                         <?php endif ?>

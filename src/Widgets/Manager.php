@@ -29,8 +29,6 @@ class Manager
      * Creates a new widget in the system.
      *
      * @param Widgets $widget
-     *
-     * @return $this
      */
     public function createWidget($widget, string $name): Manager
     {
@@ -59,8 +57,8 @@ class Manager
             foreach ($widget as $element) {
                 $items = $element->items()[0]->items();
 
-                if ($pos = strrpos(get_class($items[0]), '\\')) {
-                    $pos = substr(get_class($items[0]), $pos + 1);
+                if ($pos = strrpos($items[0]::class, '\\')) {
+                    $pos = substr($items[0]::class, $pos + 1);
                 }
                 $pos = str_replace('Item', '', $pos);
                 $i   = 0;

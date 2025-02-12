@@ -15,11 +15,7 @@ final class MetaTest extends TestCase
     use DatabaseTestTrait;
 
     protected $namespace;
-
-    /**
-     * @var User
-     */
-    protected $user;
+    private User $user;
 
     protected function setUp(): void
     {

@@ -3,7 +3,7 @@
 namespace Tests\Users;
 
 use Bonfire\Users\User;
-use CodeIgniter\Router\Exceptions\RedirectException;
+use CodeIgniter\HTTP\Exceptions\RedirectException;
 use Exception;
 use Tests\Support\TestCase;
 
@@ -13,8 +13,7 @@ use Tests\Support\TestCase;
 final class UserFormTest extends TestCase
 {
     protected $refresh = true;
-    protected $namespace;
-    protected User $user;
+    private User $user;
 
     protected function setUp(): void
     {

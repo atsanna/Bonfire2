@@ -110,7 +110,7 @@ class MenuItem
      */
     public function setUrl(string $url): self
     {
-        $this->url = strpos($url, '://') !== false ? $url : '/' . ltrim($url, '/ ');
+        $this->url = str_contains($url, '://') ? $url : '/' . ltrim($url, '/ ');
 
         return $this;
     }
@@ -210,7 +210,7 @@ class MenuItem
     public function userCanSee(): bool
     {
         // No permission set means anyone can view.
-        if (empty($this->permission)) {
+        if (! isset($this->permission) || ($this->permission === '' || $this->permission === '0')) {
             return true;
         }
 

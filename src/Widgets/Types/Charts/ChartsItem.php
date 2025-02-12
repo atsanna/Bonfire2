@@ -26,7 +26,7 @@ class ChartsItem implements Item
     protected $weight;
 
     /**
-     * @var array|string[]
+     * @var array|list<string>
      */
     protected array $bgColor = [
         'rgba(255,  99, 132, 0.2)',
@@ -39,7 +39,7 @@ class ChartsItem implements Item
     ];
 
     /**
-     * @var array|string[]
+     * @var array|list<string>
      */
     protected array $borderColor = [
         'rgb(255,  99, 132)',
@@ -56,7 +56,7 @@ class ChartsItem implements Item
     protected int $overOffset  = 20;
 
     /**
-     * @var array|string[]
+     * @var array|list<string>
      */
     protected array $supportedTypes = [
         'line',
@@ -116,9 +116,6 @@ class ChartsItem implements Item
         return $this->title;
     }
 
-    /**
-     * @return $this
-     */
     public function setTitle(?string $title): ChartsItem
     {
         $this->title = $title;
@@ -131,9 +128,6 @@ class ChartsItem implements Item
         return $this->type;
     }
 
-    /**
-     * @return $this
-     */
     public function setType(?string $type): ChartsItem
     {
         $this->type = $type;
@@ -146,9 +140,6 @@ class ChartsItem implements Item
         return $this->cssClass;
     }
 
-    /**
-     * @return $this
-     */
     public function setCssclass(string $cssClass): ChartsItem
     {
         $this->cssClass = $cssClass;
@@ -161,9 +152,6 @@ class ChartsItem implements Item
         return $this->data;
     }
 
-    /**
-     * @return $this
-     */
     public function setData(array $data): ChartsItem
     {
         $this->data = $data;
@@ -176,9 +164,6 @@ class ChartsItem implements Item
         return $this->label;
     }
 
-    /**
-     * @return $this
-     */
     public function setLabel(array $label): ChartsItem
     {
         $this->label = $label;
@@ -191,12 +176,9 @@ class ChartsItem implements Item
         return $this->chartName;
     }
 
-    /**
-     * @return $this
-     */
     public function setChartName(string $chartName = ''): ChartsItem
     {
-        $this->chartName .= $chartName . '_' . (string) hrtime(true);
+        $this->chartName .= $chartName . '_' . hrtime(true);
 
         return $this;
     }
@@ -282,40 +264,21 @@ class ChartsItem implements Item
             );';
     }
 
-    /**
-     * @return $this
-     */
     public function addDataset(string $tableName, string $groupField, string $countField, string $selectMode = 'count'): ChartsItem
     {
         // Chart Section Begin
         $groupsData = db_connect()->table($tableName)
             ->select($groupField);
 
-        switch ($selectMode) {
-            case 'count':
-                $groupsData = $groupsData->selectCount($countField);
-                break;
-
-            case 'avg':
-                $groupsData = $groupsData->selectAvg($countField);
-                break;
-
-            case 'max':
-                $groupsData = $groupsData->selectMax($countField);
-                break;
-
-            case 'min':
-                $groupsData = $groupsData->selectMin($countField);
-                break;
-
-            case 'sum':
-                $groupsData = $groupsData->selectSum($countField);
-                break;
-
-            default:
-                // TODO: return error message
-                $groupsData = $groupsData->selectCount($countField);
-        }
+        $groupsData = match ($selectMode) {
+            'count' => $groupsData->selectCount($countField),
+            'avg'   => $groupsData->selectAvg($countField),
+            'max'   => $groupsData->selectMax($countField),
+            'min'   => $groupsData->selectMin($countField),
+            'sum'   => $groupsData->selectSum($countField),
+            // TODO: return error message
+            default => $groupsData->selectCount($countField),
+        };
 
         $groupsData = $groupsData->groupBy($groupField)
             ->get()

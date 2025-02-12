@@ -3,13 +3,13 @@
 namespace Tests\Consent;
 
 use CodeIgniter\Config\Factories;
+use PHPUnit\Framework\Attributes\BackupGlobals;
 use Tests\Support\TestCase;
 
 /**
- * @backupGlobals disabled
- *
  * @internal
  */
+#[BackupGlobals(false)]
 final class ConsentHelperTest extends TestCase
 {
     protected function setUp(): void

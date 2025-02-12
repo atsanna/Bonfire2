@@ -76,8 +76,8 @@ final class ChartsTest extends TestCase
 
     public function testGetCollection()
     {
-        $widget   = new Charts();
-        $collect1 = $widget->createCollection('test1');
+        $widget = new Charts();
+        $widget->createCollection('test1');
         $collect2 = $widget->createCollection('test2');
 
         $found = $widget->collection('test2');

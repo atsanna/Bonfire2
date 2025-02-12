@@ -16,7 +16,7 @@ class Seed100Users extends Seeder
             $timestamp = $faker->dateTimeBetween('-1 year', 'now')->format('Y-m-d H:i:s');
             $firstName = $faker->firstName;
             $lastName  = $faker->lastName;
-            $username  = substr($this->toAscii($firstName), 0, 5) . substr($this->toAscii($lastName), 0, 5);
+            $username  = substr((string) $this->toAscii($firstName), 0, 5) . substr((string) $this->toAscii($lastName), 0, 5);
             $active    = $faker->boolean;
             $email     = strtolower($this->toAscii($firstName) . '.' . $this->toAscii($lastName) . '@example.com');
             $secret2   = $faker->sha256;
@@ -54,6 +54,6 @@ class Seed100Users extends Seeder
 
     private function toAscii($str)
     {
-        return iconv('UTF-8', 'ASCII//TRANSLIT', $str);
+        return iconv('UTF-8', 'ASCII//TRANSLIT', (string) $str);
     }
 }

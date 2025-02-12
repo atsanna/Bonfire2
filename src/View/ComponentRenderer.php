@@ -11,8 +11,8 @@
 
 namespace Bonfire\View;
 
-use Throwable;
 use RuntimeException;
+use Throwable;
 
 class ComponentRenderer
 {
@@ -30,7 +30,7 @@ class ComponentRenderer
      */
     public function render(?string $output): string
     {
-        if (empty($output)) {
+        if ($output === null || $output === '' || $output === '0') {
             return $output;
         }
 
@@ -129,11 +129,11 @@ class ComponentRenderer
                     return $component instanceof Component
                         ? $component->withView($view)->withData($attributes)->render()
                         : $this->renderView($view, $attributes);
-                }, $output, -1, $replaceCount);
-            } catch (Throwable $e) {
+                }, (string) $output, -1, $replaceCount);
+            } catch (Throwable) {
                 break;
             }
-        } while (!empty($replaceCount));
+        } while ($replaceCount !== 0);
 
         return $output ?? preg_last_error();
     }
@@ -182,6 +182,7 @@ class ComponentRenderer
             extract($data);
             ob_start();
             eval('?>' . file_get_contents($view));
+
             return ob_get_clean() ?: '';
         })($view, $data);
     }
