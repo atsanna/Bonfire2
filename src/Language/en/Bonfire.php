@@ -61,4 +61,7 @@ return [
     'username'   => 'Username',
     'groups'     => 'Groups',
     'lastActive' => 'Last Active',
+
+    // Auth links
+    'goToFrontpage' => 'Return to Frontpage',
 ];

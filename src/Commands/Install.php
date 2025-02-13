@@ -69,6 +69,13 @@ class Install extends BaseCommand
     protected $arguments = [];
 
     /**
+     * Is it a fresh install?
+     *
+     * @var bool
+     */
+    protected $isFreshInstall = true;
+
+    /**
      * The Command's Options
      *
      * @var array<string, string>
@@ -109,7 +116,9 @@ class Install extends BaseCommand
             $this->setAutoloadHelpers();
             $this->setSecurityCSRF();
             $this->publishThemes();
-            $this->updateComposerJson();
+            if ($this->isFreshInstall) {
+                $this->updateWelcomeMessage();
+            }
 
             CLI::newLine();
             CLI::write('If you need to create your database, you may run:', 'yellow');
@@ -136,6 +145,9 @@ class Install extends BaseCommand
         CLI::print('Creating .env file...', 'yellow');
 
         if (file_exists(ROOTPATH . '.env')) {
+            // Note that this is not a fresh install for use later
+            $this->isFreshInstall = false;
+
             CLI::print('Exists', 'green');
 
             return;
@@ -445,5 +457,33 @@ class Install extends BaseCommand
         file_put_contents($composerJsonPath, json_encode($composerJson, JSON_PRETTY_PRINT | JSON_UNESCAPED_SLASHES));
 
         CLI::write('composer.json updated successfully.', 'green');
+    }
+
+    /**
+     * Updates the welcome_message.php file to include the Bonfire links.
+     */
+    private function updateWelcomeMessage()
+    {
+        $filePath      = APPPATH . 'Views/welcome_message.php';
+        $searchString  = '<!-- CONTENT -->';
+        $replaceString = "<?php require_once(ROOTPATH . 'themes/App/_tmp_bonfire_links_include.php'); ?>";
+
+        if (! file_exists($filePath)) {
+            // this can happen if the themes were not copied
+            return;
+        }
+
+        $content = file_get_contents($filePath);
+        if (! str_contains($content, $searchString)) {
+            // this can happen if the content of the file were changed upstream
+            return;
+        }
+
+        $updatedContent = str_replace($searchString, $replaceString, $content);
+        if (write_file($filePath, $updatedContent)) {
+            CLI::write('Updated welcome_message.php successfully.', 'green');
+        } else {
+            CLI::error('Error updating welcome_message.php.');
+        }
     }
 }

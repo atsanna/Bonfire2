@@ -68,6 +68,7 @@
                     <p class="text-center"><?= lang('Auth.haveAccount') ?> <a href="<?= url_to('login') ?>"><?= lang('Auth.login') ?></a></p>
 
                 </form>
+                <p class="text-center"><a href="<?= site_url('/') ?>"><?= lang('Bonfire.goToFrontpage') ?></a></p>
             </div>
         </x-auth-card>
     </div>

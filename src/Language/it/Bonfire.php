@@ -61,4 +61,7 @@ return [
     'username'   => 'nome utente',
     'groups'     => 'Ruoli',
     'lastActive' => 'Ultima attività',
+
+    // Auth links
+    'goToFrontpage' => 'Vai alla pagina principale',
 ];
