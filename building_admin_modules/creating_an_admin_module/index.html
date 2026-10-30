@@ -11,28 +11,28 @@
       
       
       
-        <link rel="prev" href="../">
+        <link rel="prev" href="../generating_a_module/">
       
       
-        <link rel="next" href="../dashboard_cells/">
+        <link rel="next" href="../menus/">
       
       
         
       
       
       <link rel="icon" href="../../assets/images/favicon.png">
-      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.7">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.8.0">
     
     
       
-        <title>Creating an Admin Module - Bonfire 2 (beta)</title>
+        <title>Module Structure - Bonfire 2</title>
       
     
     
-      <link rel="stylesheet" href="../../assets/stylesheets/main.ec1eaa64.min.css">
+      <link rel="stylesheet" href="../../assets/stylesheets/main.57a0d79d.min.css">
       
         
-        <link rel="stylesheet" href="../../assets/stylesheets/palette.ab4e12ef.min.css">
+        <link rel="stylesheet" href="../../assets/stylesheets/palette.fb2fffe2.min.css">
       
       
 
@@ -50,8 +50,6 @@
         <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
       
     
-    
-      <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/highlightjs/cdn-release@11.9.0/build/styles/github-dark.min.css">
     
       <link rel="stylesheet" href="../../assets/css/codeigniter.css">
     
@@ -73,7 +71,7 @@
     
     
     
-    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="deep-purple" data-md-color-accent="indigo">
+    <body dir="ltr" data-md-color-scheme="codeigniter" data-md-color-primary="custom" data-md-color-accent="custom">
   
     
     <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
@@ -82,7 +80,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#creating-an-admin-module" class="md-skip">
+        <a href="#module-structure" class="md-skip">
           Skip to content
         </a>
       
@@ -98,7 +96,7 @@
 
 <header class="md-header md-header--shadow" data-md-component="header">
   <nav class="md-header__inner md-grid" aria-label="Header">
-    <a href="https://codeigniter.com" title="Bonfire 2 (beta)" class="md-header__button md-logo" aria-label="Bonfire 2 (beta)" data-md-component="logo">
+    <a href="https://codeigniter.com" title="Bonfire 2" class="md-header__button md-logo" aria-label="Bonfire 2" data-md-component="logo">
       
   
   <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
@@ -112,13 +110,13 @@
       <div class="md-header__ellipsis">
         <div class="md-header__topic">
           <span class="md-ellipsis">
-            Bonfire 2 (beta)
+            Bonfire 2
           </span>
         </div>
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Creating an Admin Module
+              Module Structure
             
           </span>
         </div>
@@ -131,7 +129,7 @@
     
     
     
-    <input class="md-option" data-md-color-media="(prefers-color-scheme: light)" data-md-color-scheme="default" data-md-color-primary="deep-purple" data-md-color-accent="indigo"  aria-label="Switch to dark mode"  type="radio" name="__palette" id="__palette_0">
+    <input class="md-option" data-md-color-media="(prefers-color-scheme: light)" data-md-color-scheme="codeigniter" data-md-color-primary="custom" data-md-color-accent="custom"  aria-label="Switch to dark mode"  type="radio" name="__palette" id="__palette_0">
     
       <label class="md-header__button md-icon" title="Switch to dark mode" for="__palette_1" hidden>
         <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a4 4 0 0 0-4 4 4 4 0 0 0 4 4 4 4 0 0 0 4-4 4 4 0 0 0-4-4m0 10a6 6 0 0 1-6-6 6 6 0 0 1 6-6 6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12z"/></svg>
@@ -141,7 +139,7 @@
     
     
     
-    <input class="md-option" data-md-color-media="(prefers-color-scheme: dark)" data-md-color-scheme="slate" data-md-color-primary="deep-purple" data-md-color-accent="indigo"  aria-label="Switch to light mode"  type="radio" name="__palette" id="__palette_1">
+    <input class="md-option" data-md-color-media="(prefers-color-scheme: dark)" data-md-color-scheme="slate" data-md-color-primary="custom" data-md-color-accent="custom"  aria-label="Switch to light mode"  type="radio" name="__palette" id="__palette_1">
     
       <label class="md-header__button md-icon" title="Switch to light mode" for="__palette_0" hidden>
         <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 18c-.89 0-1.74-.2-2.5-.55C11.56 16.5 13 14.42 13 12s-1.44-4.5-3.5-5.45C10.26 6.2 11.11 6 12 6a6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12z"/></svg>
@@ -241,13 +239,13 @@
 
 <nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
   <label class="md-nav__title" for="__drawer">
-    <a href="https://codeigniter.com" title="Bonfire 2 (beta)" class="md-nav__button md-logo" aria-label="Bonfire 2 (beta)" data-md-component="logo">
+    <a href="https://codeigniter.com" title="Bonfire 2" class="md-nav__button md-logo" aria-label="Bonfire 2" data-md-component="logo">
       
   
   <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
 
     </a>
-    Bonfire 2 (beta)
+    Bonfire 2
   </label>
   
     <div class="md-nav__source">
@@ -299,6 +297,14 @@
   
     
     
+      
+        
+      
+        
+      
+        
+      
+        
       
         
       
@@ -383,14 +389,14 @@
   
   
     <li class="md-nav__item">
-      <a href="../../intro/philosophy/" class="md-nav__link">
+      <a href="../../intro/app_structure/" class="md-nav__link">
         
   
   
   <span class="md-ellipsis">
     
   
-    Our Philosophy
+    Bonfire Application Structure
   
 
     
@@ -411,14 +417,126 @@
   
   
     <li class="md-nav__item">
-      <a href="../../intro/app_structure/" class="md-nav__link">
+      <a href="../../intro/configuration/" class="md-nav__link">
         
   
   
   <span class="md-ellipsis">
     
   
-    Bonfire Application Structure
+    Configuration Reference
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../intro/ai_agents/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Working With AI Agents
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../intro/request_flow/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    How Bonfire Fits Into a Request
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../intro/published_themes/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Why Themes Are Published Into Your App
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../intro/philosophy/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Our Philosophy
   
 
     
@@ -490,6 +608,14 @@
       
         
       
+        
+      
+        
+      
+        
+      
+        
+      
     
     
     
@@ -546,14 +672,42 @@
   
   
     <li class="md-nav__item">
-      <a href="../../modules/assets/" class="md-nav__link">
+      <a href="../../modules/dashboard/" class="md-nav__link">
         
   
   
   <span class="md-ellipsis">
     
   
-    Asset Management
+    The Dashboard
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../modules/users/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Users
   
 
     
@@ -602,14 +756,98 @@
   
   
     <li class="md-nav__item">
-      <a href="../../modules/meta_info/" class="md-nav__link">
+      <a href="../../modules/settings/" class="md-nav__link">
         
   
   
   <span class="md-ellipsis">
     
   
-    Meta Info
+    General Settings
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../modules/email/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Email Settings
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../modules/tools/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Tools
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../modules/assets/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Asset Management
   
 
     
@@ -658,14 +896,14 @@
   
   
     <li class="md-nav__item">
-      <a href="../../modules/dashboard/" class="md-nav__link">
+      <a href="../../modules/meta_info/" class="md-nav__link">
         
   
   
   <span class="md-ellipsis">
     
   
-    The Dashboard
+    Meta Info
   
 
     
@@ -771,34 +1009,6 @@
   
   
     <li class="md-nav__item">
-      <a href="../../building_sites/alerts/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    Alerts
-  
-
-    
-  </span>
-  
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
       <a href="../../building_sites/assets/" class="md-nav__link">
         
   
@@ -806,7 +1016,7 @@
   <span class="md-ellipsis">
     
   
-    Including Assets
+    Add CSS and JS to Your Site Theme
   
 
     
@@ -855,14 +1065,14 @@
   
   
     <li class="md-nav__item">
-      <a href="../../building_sites/consent/" class="md-nav__link">
+      <a href="../../building_sites/metadata/" class="md-nav__link">
         
   
   
   <span class="md-ellipsis">
     
   
-    Consent
+    View Metadata
   
 
     
@@ -883,14 +1093,42 @@
   
   
     <li class="md-nav__item">
-      <a href="../../building_sites/metadata/" class="md-nav__link">
+      <a href="../../building_sites/alerts/" class="md-nav__link">
         
   
   
   <span class="md-ellipsis">
     
   
-    View Metadata
+    Alerts
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../building_sites/consent/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Load Analytics Only After Visitors Consent
   
 
     
@@ -946,7 +1184,7 @@
   <span class="md-ellipsis">
     
   
-    Meta Info
+    Add a Custom Field to User Profiles
   
 
     
@@ -1026,6 +1264,20 @@
       
         
       
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
     
     
     
@@ -1079,6 +1331,62 @@
                 
   
   
+  
+  
+    <li class="md-nav__item">
+      <a href="../tutorial_first_module/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Tutorial: Build Your First Admin Module
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../generating_a_module/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Generating an Admin Module
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
     
   
   
@@ -1098,7 +1406,7 @@
   <span class="md-ellipsis">
     
   
-    Creating an Admin Module
+    Module Structure
   
 
     
@@ -1116,7 +1424,7 @@
   <span class="md-ellipsis">
     
   
-    Creating an Admin Module
+    Module Structure
   
 
     
@@ -1153,6 +1461,17 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#modules-in-composer-packages" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Modules in Composer packages
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#the-module-file" class="md-nav__link">
     <span class="md-ellipsis">
       
@@ -1161,22 +1480,27 @@
     </span>
   </a>
   
-    <nav class="md-nav" aria-label="The Module File">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#adding-a-menu-item" class="md-nav__link">
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#naming-a-page-in-the-breadcrumb" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Adding a Menu Item
+        Naming a page in the breadcrumb
       
     </span>
   </a>
   
 </li>
-        
-      </ul>
-    </nav>
+      
+        <li class="md-nav__item">
+  <a href="#controllers-and-views" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Controllers and views
+      
+    </span>
+  </a>
   
 </li>
       
@@ -1196,14 +1520,98 @@
   
   
     <li class="md-nav__item">
-      <a href="../dashboard_cells/" class="md-nav__link">
+      <a href="../menus/" class="md-nav__link">
         
   
   
   <span class="md-ellipsis">
     
   
-    Dashboard Cells
+    Menus
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../controllers_and_views/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Admin Controllers, Views and Themes
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../permissions/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Permissions
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../view_components/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    View Components
   
 
     
@@ -1232,6 +1640,62 @@
     
   
     Filters
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../actions/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Row and Bulk Actions
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../search/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Search
   
 
     
@@ -1308,14 +1772,14 @@
   
   
     <li class="md-nav__item">
-      <a href="../search/" class="md-nav__link">
+      <a href="../dashboard_widgets/" class="md-nav__link">
         
   
   
   <span class="md-ellipsis">
     
   
-    Search
+    Dashboard Widgets
   
 
     
@@ -1336,14 +1800,14 @@
   
   
     <li class="md-nav__item">
-      <a href="../view_components/" class="md-nav__link">
+      <a href="../localization/" class="md-nav__link">
         
   
   
   <span class="md-ellipsis">
     
   
-    View Components
+    Localization
   
 
     
@@ -1364,14 +1828,14 @@
   
   
     <li class="md-nav__item">
-      <a href="../widgets/" class="md-nav__link">
+      <a href="../testing/" class="md-nav__link">
         
   
   
   <span class="md-ellipsis">
     
   
-    Widgets
+    Testing Your Admin Module
   
 
     
@@ -1430,6 +1894,17 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#modules-in-composer-packages" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Modules in Composer packages
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#the-module-file" class="md-nav__link">
     <span class="md-ellipsis">
       
@@ -1438,22 +1913,27 @@
     </span>
   </a>
   
-    <nav class="md-nav" aria-label="The Module File">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#adding-a-menu-item" class="md-nav__link">
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#naming-a-page-in-the-breadcrumb" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Adding a Menu Item
+        Naming a page in the breadcrumb
       
     </span>
   </a>
   
 </li>
-        
-      </ul>
-    </nav>
+      
+        <li class="md-nav__item">
+  <a href="#controllers-and-views" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Controllers and views
+      
+    </span>
+  </a>
   
 </li>
       
@@ -1530,7 +2010,7 @@
   
 
 
-<h1 id="creating-an-admin-module">Creating an Admin Module</h1>
+<h1 id="module-structure">Module Structure</h1>
 <p>The bulk of your work in the admin area will likely be done creating new modules of code. Modules are groups of code
 centered around a single task or resource, like Users, Photos, etc. For the most part, admin modules are like any
 other bit of module CodeIgniter code, except for a new <code>Module.php</code> file that helps the module integrate
@@ -1541,80 +2021,94 @@ a resource list, or show up in the Recycler.</p>
 example module <a href="https://github.com/dgvirtual/bonfire2-pages-module">Pages</a>, which is an implementation of a module of 
 Bonfire 2 admin panel for administration of pages on a website.</p>
 <h2 id="configuring-module-locations">Configuring Module Locations</h2>
-<p>In order for Bonfire to discover your modules, you need to specify one or more locations that you plan on storing the modules. By default, the system will look within <code>app/Modules</code> for directories. As an example, we could create a Blog folder to store our new blog package. You would then need to create the standard directories, <code>Config</code>, <code>Controllers</code>, <code>Models</code> and <code>Views</code> at the very least. A <code>Module.php</code> file is also expected to live here, which we will look at in more detail a little later. The directory structure would look like:</p>
-<pre class="highlight"><code>app/
+<p>In order for Bonfire to discover your modules, you need to specify one or more locations that you plan on storing the modules. No location is set by default: the <code>app/Modules</code> entry in <code>Config\Bonfire</code> ships commented out, so uncomment it (or add your own, see below) before Bonfire will find your modules. As an example, we could create a Blog folder to store our new blog package. You would then need to create the standard directories, <code>Config</code>, <code>Controllers</code>, <code>Models</code> and <code>Views</code> at the very least. A <code>Module.php</code> file is also expected to live here, which we will look at in more detail a little later. The directory structure would look like:</p>
+<div class="highlight"><pre><span></span><code>app/
     Modules/
         Blog/
             Config/
             Controllers/
             Models/
             Views/
-            Module.php</code></pre>
-<p>All files within the Blog directory would be expected to live within the <code>App\Modules\{ModuleName}</code> namespace, i.e. <code>App\Modules\Blog\Config\Routes</code>. You can customize this by editing <code>Config\Bonfire</code> and changing the key of the <code>$appModules</code> setting within it.</p>
-<pre class="highlight"><code class="language-php">public $appModules = [
-    'App\Modules' =&gt; APPPATH .'Modules',
-];</code></pre>
+            Module.php
+</code></pre></div>
+<p>All files within the Blog directory would be expected to live within the <code>App\Modules\{ModuleName}</code> namespace, i.e. <code>App\Modules\Blog\Config\Routes</code>. To enable discovery, uncomment the entry in the <code>$appModules</code> setting of <code>Config\Bonfire</code>. You can customize the namespace by changing its key.</p>
+<div class="highlight"><pre><span></span><code><span class="k">public</span> <span class="nv">$appModules</span> <span class="o">=</span> <span class="p">[</span>
+    <span class="s1">'App\Modules'</span> <span class="o">=&gt;</span> <span class="nx">APPPATH</span> <span class="o">.</span><span class="s1">'Modules'</span><span class="p">,</span>
+<span class="p">];</span>
+</code></pre></div>
 <p>For example, if I would prefer the modules to simply live within my company's namespace, <code>Acme</code>, I could edit the key to reflect that:</p>
-<pre class="highlight"><code class="language-php">public $appModules = [
-    'Acme' =&gt; APPPATH .'Modules',
-];</code></pre>
+<div class="highlight"><pre><span></span><code><span class="k">public</span> <span class="nv">$appModules</span> <span class="o">=</span> <span class="p">[</span>
+    <span class="s1">'Acme'</span> <span class="o">=&gt;</span> <span class="nx">APPPATH</span> <span class="o">.</span><span class="s1">'Modules'</span><span class="p">,</span>
+<span class="p">];</span>
+</code></pre></div>
 <p>If you have multiple locations you need to keep modules, you can add multiple entries here and they will all be automatically discovered and registered within Bonfire.</p>
+<p>Bonfire caches the modules it finds in these locations for a minute. To pick up a new module folder straight away, run <code>php spark cache:clear</code>.</p>
+<h2 id="modules-in-composer-packages">Modules in Composer packages</h2>
+<p><code>$appModules</code> treats every folder in a location as a module, so it doesn't fit a Composer package that is a single
+module. List such a module in <code>$packageModules</code> instead. Each entry maps the module's own namespace to the
+directory that holds its <code>Module.php</code>:</p>
+<div class="highlight"><pre><span></span><code><span class="k">public</span> <span class="k">array</span> <span class="nv">$packageModules</span> <span class="o">=</span> <span class="p">[</span>
+    <span class="s1">'Acme\Blog'</span> <span class="o">=&gt;</span> <span class="nx">ROOTPATH</span> <span class="o">.</span> <span class="s1">'vendor/acme/blog/src'</span><span class="p">,</span>
+<span class="p">];</span>
+</code></pre></div>
+<p>Composer already autoloads the package's classes, so Bonfire only needs to find its <code>Module.php</code>. An entry whose
+directory or <code>Module.php</code> is missing is skipped.</p>
+<p>A package can register itself, so the app using it changes nothing. Add a <code>Config\Registrar</code> class to the package
+with a <code>Bonfire()</code> method, and CodeIgniter merges what it returns into <code>Config\Bonfire</code>, including an app's
+published copy:</p>
+<div class="highlight"><pre><span></span><code><span class="k">namespace</span> <span class="nx">Acme\Blog\Config</span><span class="p">;</span>
+
+<span class="k">class</span> <span class="nc">Registrar</span>
+<span class="p">{</span>
+    <span class="k">public</span> <span class="k">static</span> <span class="k">function</span> <span class="nf">Bonfire</span><span class="p">()</span><span class="o">:</span> <span class="k">array</span>
+    <span class="p">{</span>
+        <span class="k">return</span> <span class="p">[</span>
+            <span class="s1">'packageModules'</span> <span class="o">=&gt;</span> <span class="p">[</span><span class="s1">'Acme\Blog'</span> <span class="o">=&gt;</span> <span class="nb">realpath</span><span class="p">(</span><span class="no">__DIR__</span> <span class="o">.</span> <span class="s1">'/..'</span><span class="p">)],</span>
+        <span class="p">];</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+</code></pre></div>
+<p>CodeIgniter only finds registrars in Composer packages while <code>Config\Modules::$discoverInComposer</code> is <code>true</code>, its
+default.</p>
 <h2 id="the-module-file">The Module File</h2>
 <p>The Module file handles initialization functions when the admin is loaded. It allows the module to create new
 menus, insert itself into the existing sidebar menus, etc. The <code>initAdmin</code> method is where all of the setup
 for displaying and admin page should be done.</p>
-<pre class="highlight"><code class="language-php">namespace Acme\Blog;
-
-use Bonfire\Core\BaseModule;
-use Bonfire\Menus\MenuItem;
-
-class Module extends BaseModule
-{
-    public function initAdmin()
-    {
-        //
-    }
-}</code></pre>
-<h3 id="adding-a-menu-item">Adding a Menu Item</h3>
-<p>The main side navigation in the admin consists of three primary menu collections:</p>
+<p>Bonfire boots once per web request and calls one of two methods on every module:</p>
 <ul>
-<li>a main <code>Content</code> collection where you would place the main page for managing a resource (like Users)</li>
-<li>the <code>Settings</code> collection where your module's settings pages should live.</li>
-<li>the <code>Tools</code> collection which holds miscellaneous things that are helpful, but not needed on a daily basis.</li>
+<li><code>initAdmin()</code> on a request inside the admin area (<code>ADMIN_AREA</code>). The sidebar menus and dashboard widgets
+  exist only then, so add menu items and widgets here.</li>
+<li><code>initFront()</code> on every other routed web request. Use it for setup your module needs on public pages.</li>
 </ul>
-<p>Menu items are added to the sidebar using the <code>menus</code> service. Below are two examples taken from the core
-Users module. They share common setup which will be discussed after the example:</p>
-<pre class="highlight"><code class="language-php">// Settings menu for sidebar
-$sidebar = service('menus');
-$item    = new MenuItem([
-    'title'           =&gt; 'Users',
-    'namedRoute'      =&gt; 'user-settings',
-    'fontAwesomeIcon' =&gt; 'fas fa-user',
-    'permission'      =&gt; 'users.settings',
-]);
-$sidebar-&gt;menu('sidebar')-&gt;collection('settings')-&gt;addItem($item);
+<p>Bonfire boots from the <code>bonfire</code> filter, so neither runs where filters don't: 404 pages, pages served from
+CodeIgniter's page cache, and CLI commands that don't boot Bonfire themselves.
+<a href="../../intro/request_flow/">How Bonfire Fits Into a Request</a> explains where booting sits among Bonfire's filters.</p>
+<div class="highlight"><pre><span></span><code><span class="k">namespace</span> <span class="nx">Acme\Blog</span><span class="p">;</span>
 
-// Content Menu for sidebar
-$item = new MenuItem([
-    'title'           =&gt; 'Users',
-    'namedRoute'      =&gt; 'user-list',
-    'fontAwesomeIcon' =&gt; 'fas fa-users',
-    'permission'      =&gt; 'users.list',
-]);
-$sidebar-&gt;menu('sidebar')-&gt;collection('content')-&gt;addItem($item);</code></pre>
-<p><code>MenuItems</code> contain the information about a single menu item. When you create a new one you have the following
-settings available to you:</p>
-<ul>
-<li><code>title</code> is the string that will be displayed to the user in the Menu</li>
-<li><code>namedRoute</code> is the route that will be called when the link is clicked. You must use a
-  <a href="https://codeigniter.com/user_guide/incoming/routing.html#using-named-routes">named route</a> which should be defined
-  within your module's <code>Config/Routes</code> file.</li>
-<li><code>fontAwesomeIcon</code> is used to specify the <a href="https://fontawesome.com/">FontAwesome icon</a> that will be displayed in the sidebar.</li>
-<li><code>permission</code> is used to specify a permission string that is required for a user to see that link. If they do not have
-  the proper permissions the link will not be displayed within the menu. If this item should be available to everyone
-  leave it blank.</li>
-</ul>
-<p>One the MenuItem has been created, you add it to the appropriate menu/collection.</p>
+<span class="k">use</span> <span class="nx">Bonfire\Core\BaseModule</span><span class="p">;</span>
+
+<span class="k">class</span> <span class="nc">Module</span> <span class="k">extends</span> <span class="nx">BaseModule</span>
+<span class="p">{</span>
+    <span class="k">public</span> <span class="k">function</span> <span class="nf">initAdmin</span><span class="p">()</span>
+    <span class="p">{</span>
+        <span class="c1">//</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+</code></pre></div>
+<p>To add your module's pages to the sidebar from <code>initAdmin()</code>, see <a href="../menus/">Menus</a>.</p>
+<h2 id="naming-a-page-in-the-breadcrumb">Naming a page in the breadcrumb</h2>
+<p>A page below a menu item, like a single record's edit form, can add itself to the breadcrumb with a <code>crumb</code> view
+section. The breadcrumb then reads "active menu item › crumb". When the page's URL doesn't sit under any menu item,
+name the parent too with <code>crumbParent</code>:</p>
+<div class="highlight"><pre><span></span><code><span class="o">&lt;?</span><span class="nx">php</span> <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">extend</span><span class="p">(</span><span class="s1">'master'</span><span class="p">)</span> <span class="cp">?&gt;</span>
+
+<span class="cp">&lt;?php</span> <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">section</span><span class="p">(</span><span class="s1">'crumbParent'</span><span class="p">)</span> <span class="cp">?&gt;&lt;?</span><span class="o">=</span> <span class="nx">lang</span><span class="p">(</span><span class="s1">'Tools.logsModTitle'</span><span class="p">)</span> <span class="cp">?&gt;&lt;?php</span> <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">endSection</span><span class="p">()</span> <span class="cp">?&gt;</span>
+<span class="cp">&lt;?php</span> <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">section</span><span class="p">(</span><span class="s1">'crumb'</span><span class="p">)</span> <span class="cp">?&gt;&lt;?</span><span class="o">=</span> <span class="nx">esc</span><span class="p">(</span><span class="nv">$logFilePretty</span><span class="p">)</span> <span class="cp">?&gt;&lt;?php</span> <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">endSection</span><span class="p">()</span> <span class="cp">?&gt;</span>
+</code></pre></div>
+<h2 id="controllers-and-views">Controllers and views</h2>
+<p>Your module's pages are ordinary CodeIgniter controllers and views, rendered inside the Admin theme. See
+<a href="../controllers_and_views/">Admin Controllers, Views and Themes</a> for <code>AdminController</code>, the <code>master</code> layout and its
+sections, and changing the theme's own files.</p>
 
 
 
@@ -1650,7 +2144,7 @@ settings available to you:</p>
       <nav class="md-footer__inner md-grid" aria-label="Footer" >
         
           
-          <a href="../" class="md-footer__link md-footer__link--prev" aria-label="Previous: Building Admin Modules">
+          <a href="../generating_a_module/" class="md-footer__link md-footer__link--prev" aria-label="Previous: Generating an Admin Module">
             <div class="md-footer__button md-icon">
               
               <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
@@ -1660,20 +2154,20 @@ settings available to you:</p>
                 Previous
               </span>
               <div class="md-ellipsis">
-                Building Admin Modules
+                Generating an Admin Module
               </div>
             </div>
           </a>
         
         
           
-          <a href="../dashboard_cells/" class="md-footer__link md-footer__link--next" aria-label="Next: Dashboard Cells">
+          <a href="../menus/" class="md-footer__link md-footer__link--next" aria-label="Next: Menus">
             <div class="md-footer__title">
               <span class="md-footer__direction">
                 Next
               </span>
               <div class="md-ellipsis">
-                Dashboard Cells
+                Menus
               </div>
             </div>
             <div class="md-footer__button md-icon">
@@ -1730,14 +2224,10 @@ settings available to you:</p>
     
       
       
-      <script id="__config" type="application/json">{"annotate": null, "base": "../..", "features": ["content.code.copy", "navigation.footer", "content.action.edit", "navigation.top", "search.suggest", "search.highlight", "search.share", "navigation.path", "navigation.indexes", "toc.follow"], "search": "../../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
+      <script id="__config" type="application/json">{"annotate": null, "base": "../..", "features": ["content.code.copy", "navigation.footer", "content.action.edit", "navigation.top", "search.suggest", "search.highlight", "search.share", "navigation.path", "navigation.indexes", "toc.follow"], "search": "../../assets/javascripts/workers/search.a7633da7.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
     
     
-      <script src="../../assets/javascripts/bundle.d7400e89.min.js"></script>
-      
-        <script src="https://cdn.jsdelivr.net/gh/highlightjs/cdn-release@11.9.0/build/highlight.min.js"></script>
-      
-        <script src="../../assets/js/hljs.js"></script>
+      <script src="../../assets/javascripts/bundle.c21346df.min.js"></script>
       
     
   </body>

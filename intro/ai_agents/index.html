@@ -11,28 +11,28 @@
       
       
       
-        <link rel="prev" href="../creating_an_admin_module/">
+        <link rel="prev" href="../configuration/">
       
       
-        <link rel="next" href="../filters/">
+        <link rel="next" href="../request_flow/">
       
       
         
       
       
       <link rel="icon" href="../../assets/images/favicon.png">
-      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.7">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.8.0">
     
     
       
-        <title>Dashboard Cells - Bonfire 2 (beta)</title>
+        <title>Working With AI Agents - Bonfire 2</title>
       
     
     
-      <link rel="stylesheet" href="../../assets/stylesheets/main.ec1eaa64.min.css">
+      <link rel="stylesheet" href="../../assets/stylesheets/main.57a0d79d.min.css">
       
         
-        <link rel="stylesheet" href="../../assets/stylesheets/palette.ab4e12ef.min.css">
+        <link rel="stylesheet" href="../../assets/stylesheets/palette.fb2fffe2.min.css">
       
       
 
@@ -50,8 +50,6 @@
         <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
       
     
-    
-      <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/highlightjs/cdn-release@11.9.0/build/styles/github-dark.min.css">
     
       <link rel="stylesheet" href="../../assets/css/codeigniter.css">
     
@@ -73,7 +71,7 @@
     
     
     
-    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="deep-purple" data-md-color-accent="indigo">
+    <body dir="ltr" data-md-color-scheme="codeigniter" data-md-color-primary="custom" data-md-color-accent="custom">
   
     
     <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
@@ -82,7 +80,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#dashboard-cells" class="md-skip">
+        <a href="#working-with-ai-agents" class="md-skip">
           Skip to content
         </a>
       
@@ -98,7 +96,7 @@
 
 <header class="md-header md-header--shadow" data-md-component="header">
   <nav class="md-header__inner md-grid" aria-label="Header">
-    <a href="https://codeigniter.com" title="Bonfire 2 (beta)" class="md-header__button md-logo" aria-label="Bonfire 2 (beta)" data-md-component="logo">
+    <a href="https://codeigniter.com" title="Bonfire 2" class="md-header__button md-logo" aria-label="Bonfire 2" data-md-component="logo">
       
   
   <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
@@ -112,13 +110,13 @@
       <div class="md-header__ellipsis">
         <div class="md-header__topic">
           <span class="md-ellipsis">
-            Bonfire 2 (beta)
+            Bonfire 2
           </span>
         </div>
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Dashboard Cells
+              Working With AI Agents
             
           </span>
         </div>
@@ -131,7 +129,7 @@
     
     
     
-    <input class="md-option" data-md-color-media="(prefers-color-scheme: light)" data-md-color-scheme="default" data-md-color-primary="deep-purple" data-md-color-accent="indigo"  aria-label="Switch to dark mode"  type="radio" name="__palette" id="__palette_0">
+    <input class="md-option" data-md-color-media="(prefers-color-scheme: light)" data-md-color-scheme="codeigniter" data-md-color-primary="custom" data-md-color-accent="custom"  aria-label="Switch to dark mode"  type="radio" name="__palette" id="__palette_0">
     
       <label class="md-header__button md-icon" title="Switch to dark mode" for="__palette_1" hidden>
         <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a4 4 0 0 0-4 4 4 4 0 0 0 4 4 4 4 0 0 0 4-4 4 4 0 0 0-4-4m0 10a6 6 0 0 1-6-6 6 6 0 0 1 6-6 6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12z"/></svg>
@@ -141,7 +139,7 @@
     
     
     
-    <input class="md-option" data-md-color-media="(prefers-color-scheme: dark)" data-md-color-scheme="slate" data-md-color-primary="deep-purple" data-md-color-accent="indigo"  aria-label="Switch to light mode"  type="radio" name="__palette" id="__palette_1">
+    <input class="md-option" data-md-color-media="(prefers-color-scheme: dark)" data-md-color-scheme="slate" data-md-color-primary="custom" data-md-color-accent="custom"  aria-label="Switch to light mode"  type="radio" name="__palette" id="__palette_1">
     
       <label class="md-header__button md-icon" title="Switch to light mode" for="__palette_0" hidden>
         <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 18c-.89 0-1.74-.2-2.5-.55C11.56 16.5 13 14.42 13 12s-1.44-4.5-3.5-5.45C10.26 6.2 11.11 6 12 6a6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12z"/></svg>
@@ -241,13 +239,13 @@
 
 <nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
   <label class="md-nav__title" for="__drawer">
-    <a href="https://codeigniter.com" title="Bonfire 2 (beta)" class="md-nav__button md-logo" aria-label="Bonfire 2 (beta)" data-md-component="logo">
+    <a href="https://codeigniter.com" title="Bonfire 2" class="md-nav__button md-logo" aria-label="Bonfire 2" data-md-component="logo">
       
   
   <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
 
     </a>
-    Bonfire 2 (beta)
+    Bonfire 2
   </label>
   
     <div class="md-nav__source">
@@ -295,10 +293,20 @@
       
   
   
+    
   
   
+  
     
     
+      
+        
+      
+        
+      
+        
+      
+        
       
         
       
@@ -312,11 +320,11 @@
     
     
     
-    <li class="md-nav__item md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2" >
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2" checked>
         
           
           <label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="0">
@@ -337,7 +345,7 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="false">
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="true">
           <label class="md-nav__title" for="__nav_2">
             <span class="md-nav__icon md-icon"></span>
             
@@ -355,7 +363,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../intro/installation/" class="md-nav__link">
+      <a href="../installation/" class="md-nav__link">
         
   
   
@@ -383,35 +391,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../intro/philosophy/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    Our Philosophy
-  
-
-    
-  </span>
-  
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../intro/app_structure/" class="md-nav__link">
+      <a href="../app_structure/" class="md-nav__link">
         
   
   
@@ -439,7 +419,227 @@
   
   
     <li class="md-nav__item">
-      <a href="../../intro/changelog/" class="md-nav__link">
+      <a href="../configuration/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Configuration Reference
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Working With AI Agents
+  
+
+    
+  </span>
+  
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Working With AI Agents
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#your-own-text-is-kept" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Your own text is kept
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#claude-code" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Claude Code
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#keeping-it-up-to-date" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Keeping it up to date
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../request_flow/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    How Bonfire Fits Into a Request
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../published_themes/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Why Themes Are Published Into Your App
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../philosophy/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Our Philosophy
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../changelog/" class="md-nav__link">
         
   
   
@@ -478,6 +678,14 @@
       
         
           
+        
+      
+        
+      
+        
+      
+        
+      
         
       
         
@@ -546,14 +754,42 @@
   
   
     <li class="md-nav__item">
-      <a href="../../modules/assets/" class="md-nav__link">
+      <a href="../../modules/dashboard/" class="md-nav__link">
         
   
   
   <span class="md-ellipsis">
     
   
-    Asset Management
+    The Dashboard
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../modules/users/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Users
   
 
     
@@ -602,14 +838,98 @@
   
   
     <li class="md-nav__item">
-      <a href="../../modules/meta_info/" class="md-nav__link">
+      <a href="../../modules/settings/" class="md-nav__link">
         
   
   
   <span class="md-ellipsis">
     
   
-    Meta Info
+    General Settings
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../modules/email/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Email Settings
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../modules/tools/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Tools
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../modules/assets/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Asset Management
   
 
     
@@ -658,14 +978,14 @@
   
   
     <li class="md-nav__item">
-      <a href="../../modules/dashboard/" class="md-nav__link">
+      <a href="../../modules/meta_info/" class="md-nav__link">
         
   
   
   <span class="md-ellipsis">
     
   
-    The Dashboard
+    Meta Info
   
 
     
@@ -771,34 +1091,6 @@
   
   
     <li class="md-nav__item">
-      <a href="../../building_sites/alerts/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    Alerts
-  
-
-    
-  </span>
-  
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
       <a href="../../building_sites/assets/" class="md-nav__link">
         
   
@@ -806,7 +1098,7 @@
   <span class="md-ellipsis">
     
   
-    Including Assets
+    Add CSS and JS to Your Site Theme
   
 
     
@@ -855,14 +1147,14 @@
   
   
     <li class="md-nav__item">
-      <a href="../../building_sites/consent/" class="md-nav__link">
+      <a href="../../building_sites/metadata/" class="md-nav__link">
         
   
   
   <span class="md-ellipsis">
     
   
-    Consent
+    View Metadata
   
 
     
@@ -883,14 +1175,42 @@
   
   
     <li class="md-nav__item">
-      <a href="../../building_sites/metadata/" class="md-nav__link">
+      <a href="../../building_sites/alerts/" class="md-nav__link">
         
   
   
   <span class="md-ellipsis">
     
   
-    View Metadata
+    Alerts
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../building_sites/consent/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Load Analytics Only After Visitors Consent
   
 
     
@@ -946,7 +1266,7 @@
   <span class="md-ellipsis">
     
   
-    Meta Info
+    Add a Custom Field to User Profiles
   
 
     
@@ -999,8 +1319,6 @@
       
   
   
-    
-  
   
   
     
@@ -1026,19 +1344,33 @@
       
         
       
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
     
     
     
     
-    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--nested">
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5" checked>
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5" >
         
           
           <div class="md-nav__link md-nav__container">
-            <a href="../" class="md-nav__link ">
+            <a href="../../building_admin_modules/" class="md-nav__link ">
               
   
   
@@ -1062,7 +1394,7 @@
             
           </div>
         
-        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_5_label" aria-expanded="true">
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_5_label" aria-expanded="false">
           <label class="md-nav__title" for="__nav_5">
             <span class="md-nav__icon md-icon"></span>
             
@@ -1082,128 +1414,14 @@
   
   
     <li class="md-nav__item">
-      <a href="../creating_an_admin_module/" class="md-nav__link">
+      <a href="../../building_admin_modules/tutorial_first_module/" class="md-nav__link">
         
   
   
   <span class="md-ellipsis">
     
   
-    Creating an Admin Module
-  
-
-    
-  </span>
-  
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-    
-  
-  
-  
-    <li class="md-nav__item md-nav__item--active">
-      
-      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
-      
-      
-        
-      
-      
-        <label class="md-nav__link md-nav__link--active" for="__toc">
-          
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    Dashboard Cells
-  
-
-    
-  </span>
-  
-  
-
-          <span class="md-nav__icon md-icon"></span>
-        </label>
-      
-      <a href="./" class="md-nav__link md-nav__link--active">
-        
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    Dashboard Cells
-  
-
-    
-  </span>
-  
-  
-
-      </a>
-      
-        
-
-<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
-  
-  
-  
-    
-  
-  
-    <label class="md-nav__title" for="__toc">
-      <span class="md-nav__icon md-icon"></span>
-      Table of contents
-    </label>
-    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
-      
-        <li class="md-nav__item">
-  <a href="#creating-the-cell" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Creating the Cell
-      
-    </span>
-  </a>
-  
-</li>
-      
-    </ul>
-  
-</nav>
-      
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../filters/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    Filters
+    Tutorial: Build Your First Admin Module
   
 
     
@@ -1224,14 +1442,14 @@
   
   
     <li class="md-nav__item">
-      <a href="../recycler/" class="md-nav__link">
+      <a href="../../building_admin_modules/generating_a_module/" class="md-nav__link">
         
   
   
   <span class="md-ellipsis">
     
   
-    The Recycler
+    Generating an Admin Module
   
 
     
@@ -1252,14 +1470,14 @@
   
   
     <li class="md-nav__item">
-      <a href="../resource_tabs/" class="md-nav__link">
+      <a href="../../building_admin_modules/creating_an_admin_module/" class="md-nav__link">
         
   
   
   <span class="md-ellipsis">
     
   
-    Resource Tabs
+    Module Structure
   
 
     
@@ -1280,14 +1498,14 @@
   
   
     <li class="md-nav__item">
-      <a href="../search/" class="md-nav__link">
+      <a href="../../building_admin_modules/menus/" class="md-nav__link">
         
   
   
   <span class="md-ellipsis">
     
   
-    Search
+    Menus
   
 
     
@@ -1308,7 +1526,63 @@
   
   
     <li class="md-nav__item">
-      <a href="../view_components/" class="md-nav__link">
+      <a href="../../building_admin_modules/controllers_and_views/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Admin Controllers, Views and Themes
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../building_admin_modules/permissions/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Permissions
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../building_admin_modules/view_components/" class="md-nav__link">
         
   
   
@@ -1336,14 +1610,210 @@
   
   
     <li class="md-nav__item">
-      <a href="../widgets/" class="md-nav__link">
+      <a href="../../building_admin_modules/filters/" class="md-nav__link">
         
   
   
   <span class="md-ellipsis">
     
   
-    Widgets
+    Filters
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../building_admin_modules/actions/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Row and Bulk Actions
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../building_admin_modules/search/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Search
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../building_admin_modules/recycler/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    The Recycler
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../building_admin_modules/resource_tabs/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Resource Tabs
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../building_admin_modules/dashboard_widgets/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Dashboard Widgets
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../building_admin_modules/localization/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Localization
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../building_admin_modules/testing/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Testing Your Admin Module
   
 
     
@@ -1391,10 +1861,32 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#creating-the-cell" class="md-nav__link">
+  <a href="#your-own-text-is-kept" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Creating the Cell
+        Your own text is kept
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#claude-code" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Claude Code
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#keeping-it-up-to-date" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Keeping it up to date
       
     </span>
   </a>
@@ -1444,10 +1936,10 @@
     
     
       <li class="md-path__item">
-        <a href="../" class="md-path__link">
+        <a href="../installation/" class="md-path__link">
           
   <span class="md-ellipsis">
-    Building Admin Modules
+    Welcome
   </span>
 
         </a>
@@ -1466,7 +1958,7 @@
 
 
   
-    <a href="https://github.com/lonnieezell/Bonfire2/edit/develop/docs/building_admin_modules/dashboard_cells.md" title="Edit this page" class="md-content__button md-icon" rel="edit">
+    <a href="https://github.com/lonnieezell/Bonfire2/edit/develop/docs/intro/ai_agents.md" title="Edit this page" class="md-content__button md-icon" rel="edit">
       
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M10 20H6V4h7v5h5v3.1l2-2V8l-6-6H6c-1.1 0-2 .9-2 2v16c0 1.1.9 2 2 2h4zm10.2-7c.1 0 .3.1.4.2l1.3 1.3c.2.2.2.6 0 .8l-1 1-2.1-2.1 1-1c.1-.1.2-.2.4-.2m0 3.9L14.1 23H12v-2.1l6.1-6.1z"/></svg>
     </a>
@@ -1474,35 +1966,47 @@
   
 
 
-<h1 id="dashboard-cells">Dashboard Cells</h1>
-<p>You can customize the dashboard with the use of <a href="https://codeigniter.com/user_guide/outgoing/view_cells.html">view cells</a>.
-You can specify which cells to display by editing the <code>Bonfire\Dashboard\Config\Dashboard</code> config class;</p>
-<pre class="highlight"><code class="language-php">class Dashboard extends BaseConfig
-{
-    public array $cells = [
-        'Bonfire\Dashboard\DashboardCells::quickLinks',
-        'Bonfire\Widgets\Cells\WidgetCells::stats',
-        'Bonfire\Widgets\Cells\WidgetCells::charts',
-    ];
-}</code></pre>
-<p>The cells are displayed in the order listed, from top to bottom in the Dashboard. You can comment out any class to have it not show.
-The stats and charts cells that come on by default are used to display the widgets, that can be configured in the admin area.</p>
-<h2 id="creating-the-cell">Creating the Cell</h2>
-<p>The cells are very simple class methods that return the HTML or <code>view()</code> results. Here is the Quick Links cell as an example:</p>
-<pre class="highlight"><code class="language-php">class DashboardCells
-{
-    /**
-     * Displays a selection of "Quick Links" in the admin dashboard.
-     * This is a view cell that uses the "content" sidebar menu
-     * items to determine the links to show.
-     */
-    public function quickLinks()
-    {
-        return view('Bonfire\Dashboard\Views\quick_links', [
-            'menu' =&gt; service('menus')-&gt;menu('sidebar')-&gt;collection('content'),
-        ]);
-    }
-}</code></pre>
+<h1 id="working-with-ai-agents">Working With AI Agents</h1>
+<p>AI coding agents don't know Bonfire's conventions. Left alone, they tend to write plain CodeIgniter controllers instead
+of modules, hand-roll Bootstrap instead of using the admin view components, edit files in <code>vendor/</code> instead of your
+published themes and config, and mix in patterns from Bonfire 1 or older CodeIgniter versions.</p>
+<p>Bonfire can write a short guide for them into your project's <code>AGENTS.md</code>, the file Cursor, Copilot, Codex and other
+agents read for project instructions:</p>
+<div class="highlight"><pre><span></span><code>php<span class="w"> </span>spark<span class="w"> </span>bf:agents
+</code></pre></div>
+<p>The guide says where things live, the rules to follow when adding admin features, and which page of these docs to read
+for each task. It points to the docs that ship with the package in <code>vendor/lonnieezell/bonfire/docs/</code>, so they always
+match the version you have installed.</p>
+<h2 id="your-own-text-is-kept">Your own text is kept</h2>
+<p>Bonfire's part of <code>AGENTS.md</code> sits between two markers:</p>
+<div class="highlight"><pre><span></span><code>&lt;!-- bonfire:start --&gt;
+...
+&lt;!-- bonfire:end --&gt;
+</code></pre></div>
+<ul>
+<li>With no <code>AGENTS.md</code>, the command creates one holding just this section.</li>
+<li>With an <code>AGENTS.md</code> that has no markers, the section is added at the end. Nothing above it changes.</li>
+<li>With both markers, only the text between them is replaced, so running the command again is safe.</li>
+</ul>
+<p>Write your own instructions outside the markers. If the markers are broken (one is missing, they are out of order, or
+there is more than one pair), the command writes nothing and tells you what is wrong. Fix or remove them by hand and run
+it again; repairing them automatically could delete your own text.</p>
+<h2 id="claude-code">Claude Code</h2>
+<p>Claude Code reads <code>CLAUDE.md</code> rather than <code>AGENTS.md</code>. If your project has a <code>CLAUDE.md</code>, the command reminds you to
+import the guide from it by adding this line:</p>
+<div class="highlight"><pre><span></span><code><span class="ni">@AGENTS</span>.md
+</code></pre></div>
+<p>The command never edits <code>CLAUDE.md</code> itself.</p>
+<h2 id="keeping-it-up-to-date">Keeping it up to date</h2>
+<p>The guide names the Bonfire version it was written for. To refresh it after every update, add the command to the
+<code>post-update-cmd</code> scripts of your <code>composer.json</code>, next to the breaking changes check:</p>
+<div class="highlight"><pre><span></span><code><span class="nt">"scripts"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="nt">"post-update-cmd"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span>
+<span class="w">        </span><span class="s2">"php spark notify:breaking-changes"</span><span class="p">,</span>
+<span class="w">        </span><span class="s2">"php spark bf:agents"</span>
+<span class="w">    </span><span class="p">]</span>
+<span class="p">}</span>
+</code></pre></div>
 
 
 
@@ -1538,7 +2042,7 @@ The stats and charts cells that come on by default are used to display the widge
       <nav class="md-footer__inner md-grid" aria-label="Footer" >
         
           
-          <a href="../creating_an_admin_module/" class="md-footer__link md-footer__link--prev" aria-label="Previous: Creating an Admin Module">
+          <a href="../configuration/" class="md-footer__link md-footer__link--prev" aria-label="Previous: Configuration Reference">
             <div class="md-footer__button md-icon">
               
               <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
@@ -1548,20 +2052,20 @@ The stats and charts cells that come on by default are used to display the widge
                 Previous
               </span>
               <div class="md-ellipsis">
-                Creating an Admin Module
+                Configuration Reference
               </div>
             </div>
           </a>
         
         
           
-          <a href="../filters/" class="md-footer__link md-footer__link--next" aria-label="Next: Filters">
+          <a href="../request_flow/" class="md-footer__link md-footer__link--next" aria-label="Next: How Bonfire Fits Into a Request">
             <div class="md-footer__title">
               <span class="md-footer__direction">
                 Next
               </span>
               <div class="md-ellipsis">
-                Filters
+                How Bonfire Fits Into a Request
               </div>
             </div>
             <div class="md-footer__button md-icon">
@@ -1618,14 +2122,10 @@ The stats and charts cells that come on by default are used to display the widge
     
       
       
-      <script id="__config" type="application/json">{"annotate": null, "base": "../..", "features": ["content.code.copy", "navigation.footer", "content.action.edit", "navigation.top", "search.suggest", "search.highlight", "search.share", "navigation.path", "navigation.indexes", "toc.follow"], "search": "../../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
+      <script id="__config" type="application/json">{"annotate": null, "base": "../..", "features": ["content.code.copy", "navigation.footer", "content.action.edit", "navigation.top", "search.suggest", "search.highlight", "search.share", "navigation.path", "navigation.indexes", "toc.follow"], "search": "../../assets/javascripts/workers/search.a7633da7.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
     
     
-      <script src="../../assets/javascripts/bundle.d7400e89.min.js"></script>
-      
-        <script src="https://cdn.jsdelivr.net/gh/highlightjs/cdn-release@11.9.0/build/highlight.min.js"></script>
-      
-        <script src="../../assets/js/hljs.js"></script>
+      <script src="../../assets/javascripts/bundle.c21346df.min.js"></script>
       
     
   </body>

@@ -11,28 +11,28 @@
       
       
       
-        <link rel="prev" href="../dashboard_cells/">
+        <link rel="prev" href="../view_components/">
       
       
-        <link rel="next" href="../recycler/">
+        <link rel="next" href="../actions/">
       
       
         
       
       
       <link rel="icon" href="../../assets/images/favicon.png">
-      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.7">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.8.0">
     
     
       
-        <title>Filters - Bonfire 2 (beta)</title>
+        <title>Filters - Bonfire 2</title>
       
     
     
-      <link rel="stylesheet" href="../../assets/stylesheets/main.ec1eaa64.min.css">
+      <link rel="stylesheet" href="../../assets/stylesheets/main.57a0d79d.min.css">
       
         
-        <link rel="stylesheet" href="../../assets/stylesheets/palette.ab4e12ef.min.css">
+        <link rel="stylesheet" href="../../assets/stylesheets/palette.fb2fffe2.min.css">
       
       
 
@@ -50,8 +50,6 @@
         <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
       
     
-    
-      <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/highlightjs/cdn-release@11.9.0/build/styles/github-dark.min.css">
     
       <link rel="stylesheet" href="../../assets/css/codeigniter.css">
     
@@ -73,7 +71,7 @@
     
     
     
-    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="deep-purple" data-md-color-accent="indigo">
+    <body dir="ltr" data-md-color-scheme="codeigniter" data-md-color-primary="custom" data-md-color-accent="custom">
   
     
     <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
@@ -98,7 +96,7 @@
 
 <header class="md-header md-header--shadow" data-md-component="header">
   <nav class="md-header__inner md-grid" aria-label="Header">
-    <a href="https://codeigniter.com" title="Bonfire 2 (beta)" class="md-header__button md-logo" aria-label="Bonfire 2 (beta)" data-md-component="logo">
+    <a href="https://codeigniter.com" title="Bonfire 2" class="md-header__button md-logo" aria-label="Bonfire 2" data-md-component="logo">
       
   
   <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
@@ -112,7 +110,7 @@
       <div class="md-header__ellipsis">
         <div class="md-header__topic">
           <span class="md-ellipsis">
-            Bonfire 2 (beta)
+            Bonfire 2
           </span>
         </div>
         <div class="md-header__topic" data-md-component="header-topic">
@@ -131,7 +129,7 @@
     
     
     
-    <input class="md-option" data-md-color-media="(prefers-color-scheme: light)" data-md-color-scheme="default" data-md-color-primary="deep-purple" data-md-color-accent="indigo"  aria-label="Switch to dark mode"  type="radio" name="__palette" id="__palette_0">
+    <input class="md-option" data-md-color-media="(prefers-color-scheme: light)" data-md-color-scheme="codeigniter" data-md-color-primary="custom" data-md-color-accent="custom"  aria-label="Switch to dark mode"  type="radio" name="__palette" id="__palette_0">
     
       <label class="md-header__button md-icon" title="Switch to dark mode" for="__palette_1" hidden>
         <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a4 4 0 0 0-4 4 4 4 0 0 0 4 4 4 4 0 0 0 4-4 4 4 0 0 0-4-4m0 10a6 6 0 0 1-6-6 6 6 0 0 1 6-6 6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12z"/></svg>
@@ -141,7 +139,7 @@
     
     
     
-    <input class="md-option" data-md-color-media="(prefers-color-scheme: dark)" data-md-color-scheme="slate" data-md-color-primary="deep-purple" data-md-color-accent="indigo"  aria-label="Switch to light mode"  type="radio" name="__palette" id="__palette_1">
+    <input class="md-option" data-md-color-media="(prefers-color-scheme: dark)" data-md-color-scheme="slate" data-md-color-primary="custom" data-md-color-accent="custom"  aria-label="Switch to light mode"  type="radio" name="__palette" id="__palette_1">
     
       <label class="md-header__button md-icon" title="Switch to light mode" for="__palette_0" hidden>
         <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 18c-.89 0-1.74-.2-2.5-.55C11.56 16.5 13 14.42 13 12s-1.44-4.5-3.5-5.45C10.26 6.2 11.11 6 12 6a6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12z"/></svg>
@@ -241,13 +239,13 @@
 
 <nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
   <label class="md-nav__title" for="__drawer">
-    <a href="https://codeigniter.com" title="Bonfire 2 (beta)" class="md-nav__button md-logo" aria-label="Bonfire 2 (beta)" data-md-component="logo">
+    <a href="https://codeigniter.com" title="Bonfire 2" class="md-nav__button md-logo" aria-label="Bonfire 2" data-md-component="logo">
       
   
   <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
 
     </a>
-    Bonfire 2 (beta)
+    Bonfire 2
   </label>
   
     <div class="md-nav__source">
@@ -299,6 +297,14 @@
   
     
     
+      
+        
+      
+        
+      
+        
+      
+        
       
         
       
@@ -383,14 +389,14 @@
   
   
     <li class="md-nav__item">
-      <a href="../../intro/philosophy/" class="md-nav__link">
+      <a href="../../intro/app_structure/" class="md-nav__link">
         
   
   
   <span class="md-ellipsis">
     
   
-    Our Philosophy
+    Bonfire Application Structure
   
 
     
@@ -411,14 +417,126 @@
   
   
     <li class="md-nav__item">
-      <a href="../../intro/app_structure/" class="md-nav__link">
+      <a href="../../intro/configuration/" class="md-nav__link">
         
   
   
   <span class="md-ellipsis">
     
   
-    Bonfire Application Structure
+    Configuration Reference
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../intro/ai_agents/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Working With AI Agents
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../intro/request_flow/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    How Bonfire Fits Into a Request
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../intro/published_themes/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Why Themes Are Published Into Your App
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../intro/philosophy/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Our Philosophy
   
 
     
@@ -490,6 +608,14 @@
       
         
       
+        
+      
+        
+      
+        
+      
+        
+      
     
     
     
@@ -546,14 +672,42 @@
   
   
     <li class="md-nav__item">
-      <a href="../../modules/assets/" class="md-nav__link">
+      <a href="../../modules/dashboard/" class="md-nav__link">
         
   
   
   <span class="md-ellipsis">
     
   
-    Asset Management
+    The Dashboard
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../modules/users/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Users
   
 
     
@@ -602,14 +756,98 @@
   
   
     <li class="md-nav__item">
-      <a href="../../modules/meta_info/" class="md-nav__link">
+      <a href="../../modules/settings/" class="md-nav__link">
         
   
   
   <span class="md-ellipsis">
     
   
-    Meta Info
+    General Settings
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../modules/email/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Email Settings
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../modules/tools/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Tools
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../modules/assets/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Asset Management
   
 
     
@@ -658,14 +896,14 @@
   
   
     <li class="md-nav__item">
-      <a href="../../modules/dashboard/" class="md-nav__link">
+      <a href="../../modules/meta_info/" class="md-nav__link">
         
   
   
   <span class="md-ellipsis">
     
   
-    The Dashboard
+    Meta Info
   
 
     
@@ -771,34 +1009,6 @@
   
   
     <li class="md-nav__item">
-      <a href="../../building_sites/alerts/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    Alerts
-  
-
-    
-  </span>
-  
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
       <a href="../../building_sites/assets/" class="md-nav__link">
         
   
@@ -806,7 +1016,7 @@
   <span class="md-ellipsis">
     
   
-    Including Assets
+    Add CSS and JS to Your Site Theme
   
 
     
@@ -855,14 +1065,14 @@
   
   
     <li class="md-nav__item">
-      <a href="../../building_sites/consent/" class="md-nav__link">
+      <a href="../../building_sites/metadata/" class="md-nav__link">
         
   
   
   <span class="md-ellipsis">
     
   
-    Consent
+    View Metadata
   
 
     
@@ -883,14 +1093,42 @@
   
   
     <li class="md-nav__item">
-      <a href="../../building_sites/metadata/" class="md-nav__link">
+      <a href="../../building_sites/alerts/" class="md-nav__link">
         
   
   
   <span class="md-ellipsis">
     
   
-    View Metadata
+    Alerts
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../building_sites/consent/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Load Analytics Only After Visitors Consent
   
 
     
@@ -946,7 +1184,7 @@
   <span class="md-ellipsis">
     
   
-    Meta Info
+    Add a Custom Field to User Profiles
   
 
     
@@ -1026,6 +1264,20 @@
       
         
       
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
     
     
     
@@ -1082,14 +1334,14 @@
   
   
     <li class="md-nav__item">
-      <a href="../creating_an_admin_module/" class="md-nav__link">
+      <a href="../tutorial_first_module/" class="md-nav__link">
         
   
   
   <span class="md-ellipsis">
     
   
-    Creating an Admin Module
+    Tutorial: Build Your First Admin Module
   
 
     
@@ -1110,14 +1362,154 @@
   
   
     <li class="md-nav__item">
-      <a href="../dashboard_cells/" class="md-nav__link">
+      <a href="../generating_a_module/" class="md-nav__link">
         
   
   
   <span class="md-ellipsis">
     
   
-    Dashboard Cells
+    Generating an Admin Module
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../creating_an_admin_module/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Module Structure
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../menus/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Menus
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../controllers_and_views/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Admin Controllers, Views and Themes
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../permissions/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Permissions
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../view_components/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    View Components
   
 
     
@@ -1291,6 +1683,62 @@
   
   
     <li class="md-nav__item">
+      <a href="../actions/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Row and Bulk Actions
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../search/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Search
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
       <a href="../recycler/" class="md-nav__link">
         
   
@@ -1347,14 +1795,14 @@
   
   
     <li class="md-nav__item">
-      <a href="../search/" class="md-nav__link">
+      <a href="../dashboard_widgets/" class="md-nav__link">
         
   
   
   <span class="md-ellipsis">
     
   
-    Search
+    Dashboard Widgets
   
 
     
@@ -1375,14 +1823,14 @@
   
   
     <li class="md-nav__item">
-      <a href="../view_components/" class="md-nav__link">
+      <a href="../localization/" class="md-nav__link">
         
   
   
   <span class="md-ellipsis">
     
   
-    View Components
+    Localization
   
 
     
@@ -1403,14 +1851,14 @@
   
   
     <li class="md-nav__item">
-      <a href="../widgets/" class="md-nav__link">
+      <a href="../testing/" class="md-nav__link">
         
   
   
   <span class="md-ellipsis">
     
   
-    Widgets
+    Testing Your Admin Module
   
 
     
@@ -1616,17 +2064,18 @@ for you. This ensures a consistent look and functionality in the UI while provid
 need to create a UI in a hurry.</p>
 <h2 id="specifying-filterable-columns">Specifying Filterable Columns</h2>
 <p>You specify the available filters within your Model, using a class property named <code>filters</code>.</p>
-<pre class="highlight"><code class="language-php">protected $filters = [
-    'column_name' =&gt; [
-        'title' =&gt; 'Column Title',
-        'type' =&gt; 'radio',
-        'options' =&gt; ['one' =&gt; 'Option 1', 'two' =&gt; 'Option 2']
-    ],
-    'column_two' =&gt; [
-        'title' =&gt; 'Column Title',
-        'options' =&gt; 'methodName'
-    ]
-];</code></pre>
+<div class="highlight"><pre><span></span><code><span class="k">protected</span> <span class="nv">$filters</span> <span class="o">=</span> <span class="p">[</span>
+    <span class="s1">'column_name'</span> <span class="o">=&gt;</span> <span class="p">[</span>
+        <span class="s1">'title'</span> <span class="o">=&gt;</span> <span class="s1">'Column Title'</span><span class="p">,</span>
+        <span class="s1">'type'</span> <span class="o">=&gt;</span> <span class="s1">'radio'</span><span class="p">,</span>
+        <span class="s1">'options'</span> <span class="o">=&gt;</span> <span class="p">[</span><span class="s1">'one'</span> <span class="o">=&gt;</span> <span class="s1">'Option 1'</span><span class="p">,</span> <span class="s1">'two'</span> <span class="o">=&gt;</span> <span class="s1">'Option 2'</span><span class="p">]</span>
+    <span class="p">],</span>
+    <span class="s1">'column_two'</span> <span class="o">=&gt;</span> <span class="p">[</span>
+        <span class="s1">'title'</span> <span class="o">=&gt;</span> <span class="s1">'Column Title'</span><span class="p">,</span>
+        <span class="s1">'options'</span> <span class="o">=&gt;</span> <span class="s1">'methodName'</span>
+    <span class="p">]</span>
+<span class="p">];</span>
+</code></pre></div>
 <p>The key of each array element is the name of the <code>column</code> that you wish to filter on. The column must be within the
 table for the model (see below for other options). It is then described by an array with the keys <code>title</code>, <code>options</code>, and 
 optional key <code>type</code>. 
@@ -1643,69 +2092,73 @@ that returns the list of options.</p>
 trait, which implements a basic <code>filter()</code> method for you.</p>
 <p>Since model's can get crowded with test data, filter data, custom methods, events, and more, you can split out the
 filter functionality into a new class that extends the model, placing your custom filter logic within that class.</p>
-<pre class="highlight"><code class="language-php">use App\UserModel;
-use Bonfire\Traits\Filterable;
+<div class="highlight"><pre><span></span><code><span class="k">use</span> <span class="nx">App\UserModel</span><span class="p">;</span>
+<span class="k">use</span> <span class="nx">Bonfire\Core\Traits\Filterable</span><span class="p">;</span>
 
-class UserFilter extends UserModel
-{
-    use Filterable;
+<span class="k">class</span> <span class="nc">UserFilter</span> <span class="k">extends</span> <span class="nx">UserModel</span>
+<span class="p">{</span>
+    <span class="k">use</span> <span class="nx">Filterable</span><span class="p">;</span>
 
-    public $filters = [
-        ...
-    ];
+    <span class="k">public</span> <span class="nv">$filters</span> <span class="o">=</span> <span class="p">[</span>
+        <span class="o">...</span>
+    <span class="p">];</span>
 
-    /**
-     * A computed options function
-     */
-    protected function computeFilterA()
-    {
-        //
-    }
-}</code></pre>
+    <span class="sd">/**</span>
+<span class="sd">     * A computed options function</span>
+<span class="sd">     */</span>
+    <span class="k">protected</span> <span class="k">function</span> <span class="nf">computeFilterA</span><span class="p">()</span>
+    <span class="p">{</span>
+        <span class="c1">//</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+</code></pre></div>
 <h3 id="complex-filter-columns">Complex Filter Columns</h3>
 <p>There are many times that you'll need to show options that don't directly relate to the model at hand. In this case
 you must override the  <code>filter()</code> method on the model. Within that method you must handle all of the cases for the
 options you provided manually, returning the query object.</p>
-<pre class="highlight"><code class="language-php">public function filter(array $params)
-{
-    $query = $this-&gt;builder();
+<div class="highlight"><pre><span></span><code><span class="k">public</span> <span class="k">function</span> <span class="nf">filter</span><span class="p">(</span><span class="k">array</span> <span class="nv">$params</span><span class="p">)</span>
+<span class="p">{</span>
+    <span class="nv">$query</span> <span class="o">=</span> <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">builder</span><span class="p">();</span>
 
-    if (isset($params['foo']) &amp;&amp; ! empty($params['foo'])) {
-        $query-&gt;whereIn('foo', $params['foo']);
-    }
+    <span class="k">if</span> <span class="p">(</span><span class="nb">isset</span><span class="p">(</span><span class="nv">$params</span><span class="p">[</span><span class="s1">'foo'</span><span class="p">])</span> <span class="o">&amp;&amp;</span> <span class="o">!</span> <span class="k">empty</span><span class="p">(</span><span class="nv">$params</span><span class="p">[</span><span class="s1">'foo'</span><span class="p">]))</span> <span class="p">{</span>
+        <span class="nv">$query</span><span class="o">-&gt;</span><span class="na">whereIn</span><span class="p">(</span><span class="s1">'foo'</span><span class="p">,</span> <span class="nv">$params</span><span class="p">[</span><span class="s1">'foo'</span><span class="p">]);</span>
+    <span class="p">}</span>
 
-    return $query;
-}</code></pre>
+    <span class="k">return</span> <span class="nv">$query</span><span class="p">;</span>
+<span class="p">}</span>
+</code></pre></div>
 <h2 id="displaying-filters-in-the-admin">Displaying Filters in the Admin</h2>
 <p>There are 4 parts that are needed to get a working, filterable list of resources in the admin area.</p>
 <h3 id="the-route">The Route</h3>
 <p>The main route for your resource list page must support both GET and POST methods.</p>
-<pre class="highlight"><code class="language-php">$routes-&gt;match(['GET', 'POST'], 'users', 'UserController::list', ['as' =&gt; 'user-list']);</code></pre>
+<div class="highlight"><pre><span></span><code><span class="nv">$routes</span><span class="o">-&gt;</span><span class="na">match</span><span class="p">([</span><span class="s1">'GET'</span><span class="p">,</span> <span class="s1">'POST'</span><span class="p">],</span> <span class="s1">'users'</span><span class="p">,</span> <span class="s1">'UserController::list'</span><span class="p">,</span> <span class="p">[</span><span class="s1">'as'</span> <span class="o">=&gt;</span> <span class="s1">'user-list'</span><span class="p">]);</span>
+</code></pre></div>
 <p>The controller should then choose between sending either a full HTML page for a regular GET request, 
 or just sending back the table for ajax requests issued via HTMX. You might do it something like:</p>
-<pre class="highlight"><code class="language-php">public function list()
-{
-    $userModel = model('UserFilter');
+<div class="highlight"><pre><span></span><code><span class="k">public</span> <span class="k">function</span> <span class="nf">list</span><span class="p">()</span>
+<span class="p">{</span>
+    <span class="nv">$userModel</span> <span class="o">=</span> <span class="nx">model</span><span class="p">(</span><span class="s1">'UserFilter'</span><span class="p">);</span>
 
-    // Performs the actual filtering of the results.
-    $userModel-&gt;filter($this-&gt;request-&gt;getPost('filters'));
+    <span class="c1">// Performs the actual filtering of the results.</span>
+    <span class="nv">$userModel</span><span class="o">-&gt;</span><span class="na">filter</span><span class="p">(</span><span class="nv">$this</span><span class="o">-&gt;</span><span class="na">request</span><span class="o">-&gt;</span><span class="na">getPost</span><span class="p">(</span><span class="s1">'filters'</span><span class="p">));</span>
 
-    $view = $this-&gt;request-&gt;hasHeader('HX-Request')
-        ? $this-&gt;viewPrefix .'_table'
-        : $this-&gt;viewPrefix .'list';
+    <span class="nv">$view</span> <span class="o">=</span> <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">request</span><span class="o">-&gt;</span><span class="na">hasHeader</span><span class="p">(</span><span class="s1">'HX-Request'</span><span class="p">)</span>
+        <span class="o">?</span> <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">viewPrefix</span> <span class="o">.</span><span class="s1">'_table'</span>
+        <span class="o">:</span> <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">viewPrefix</span> <span class="o">.</span><span class="s1">'list'</span><span class="p">;</span>
 
-    return $this-&gt;render($view, [
-        'headers' =&gt; [
-            'email' =&gt; 'Email',
-            'name' =&gt; 'Name',
-            'groups' =&gt; 'Groups',
-            'last_login' =&gt; 'Last Login'
-        ],
-        'showSelectAll' =&gt; true,
-        'users' =&gt; $userModel-&gt;paginate(setting('Site.perPage')),
-        'pager' =&gt; $userModel-&gt;pager,
-    ]);
-}</code></pre>
+    <span class="k">return</span> <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">render</span><span class="p">(</span><span class="nv">$view</span><span class="p">,</span> <span class="p">[</span>
+        <span class="s1">'headers'</span> <span class="o">=&gt;</span> <span class="p">[</span>
+            <span class="s1">'email'</span> <span class="o">=&gt;</span> <span class="s1">'Email'</span><span class="p">,</span>
+            <span class="s1">'name'</span> <span class="o">=&gt;</span> <span class="s1">'Name'</span><span class="p">,</span>
+            <span class="s1">'groups'</span> <span class="o">=&gt;</span> <span class="s1">'Groups'</span><span class="p">,</span>
+            <span class="s1">'last_login'</span> <span class="o">=&gt;</span> <span class="s1">'Last Login'</span>
+        <span class="p">],</span>
+        <span class="s1">'showSelectAll'</span> <span class="o">=&gt;</span> <span class="k">true</span><span class="p">,</span>
+        <span class="s1">'users'</span> <span class="o">=&gt;</span> <span class="nv">$userModel</span><span class="o">-&gt;</span><span class="na">paginate</span><span class="p">(</span><span class="nx">setting</span><span class="p">(</span><span class="s1">'Site.perPage'</span><span class="p">)),</span>
+        <span class="s1">'pager'</span> <span class="o">=&gt;</span> <span class="nv">$userModel</span><span class="o">-&gt;</span><span class="na">pager</span><span class="p">,</span>
+    <span class="p">]);</span>
+<span class="p">}</span>
+</code></pre></div>
 <h3 id="the-view">The View</h3>
 <p>Within your view there are 3 things to do.</p>
 <p>First, ensure that the table with your resource list is wrapped in a div that uses some <a href="https://alpinejs.dev/">Alpine.js</a>
@@ -1718,23 +2171,27 @@ that calls your controller method via AJAX and updates the list of items without
 <a href="https://htmx.org/">htmx</a> magic. When calling this, you must supply the ID of the div that surrounds the table of
 results as the <code>target</code>.</p>
 <p>Here's how this is used for the list of users within Bonfire.</p>
-<pre class="highlight"><code class="language-html">&lt;div x-data="{filtered: false}"&gt;
-    &lt;x-filter-link /&gt;
+<div class="highlight"><pre><span></span><code><span class="p">&lt;</span><span class="nt">div</span> <span class="na">x-data</span><span class="o">=</span><span class="s">"{filtered: false}"</span><span class="p">&gt;</span>
+    <span class="p">&lt;</span><span class="nt">x-filter-link</span> <span class="p">/&gt;</span>
 
-    &lt;div class="row"&gt;
-        &lt;!-- List Users --&gt;
-        &lt;div class="col order-2 order-md-1" id="content-list"&gt;
-            &lt;?= $this-&gt;include('Bonfire\Users\Views\_table') ?&gt;
-        &lt;/div&gt;
+    <span class="p">&lt;</span><span class="nt">div</span> <span class="na">class</span><span class="o">=</span><span class="s">"row"</span><span class="p">&gt;</span>
+        <span class="cm">&lt;!-- List Users --&gt;</span>
+        <span class="p">&lt;</span><span class="nt">div</span> <span class="na">class</span><span class="o">=</span><span class="s">"col order-2 order-md-1"</span> <span class="na">id</span><span class="o">=</span><span class="s">"content-list"</span><span class="p">&gt;</span>
+            <span class="cp">&lt;?= $this-&gt;include('Bonfire\Users\Views\_table') ?&gt;</span>
+        <span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
 
-        &lt;!-- Filters --&gt;
-        &lt;div class="col-auto order-1 order-md-2" x-show="filtered" x-transition.duration.240ms&gt;
-            &lt;?= view_cell('Bonfire\Libraries\Cells\Filters::renderList 'model=UserFilter target=#content-list') ?&gt;
-        &lt;/div&gt;
-    &lt;/div&gt;
-&lt;/div&gt;</code></pre>
+        <span class="cm">&lt;!-- Filters --&gt;</span>
+        <span class="p">&lt;</span><span class="nt">div</span> <span class="na">class</span><span class="o">=</span><span class="s">"col-auto order-1 order-md-2"</span> <span class="na">x-show</span><span class="o">=</span><span class="s">"filtered"</span> <span class="na">x-transition</span><span class="err">.</span><span class="na">duration</span><span class="err">.</span><span class="na">240ms</span><span class="p">&gt;</span>
+            <span class="cp">&lt;?= view_cell('Bonfire\Core\Cells\Filters::renderList', 'model=UserFilter target=#content-list') ?&gt;</span>
+        <span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
+    <span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
+<span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
+</code></pre></div>
 <p>Note that the id of the eleent that contains the included table should be with <code>id="content-list"</code> as it this <code>id</code> is
 the default target for content replacements by the pager and the filter.</p>
+<p>For the admin design's list footer ("Showing X of Y · Previous / Next", loaded through htmx), render the pager with
+the <code>bonfire_list_hx</code> template inside the replaced element: <code>&lt;?= $pager-&gt;links('default', 'bonfire_list_hx') ?&gt;</code>. It
+takes its <code>hx-target</code> from an ancestor, so put <code>hx-target="#content-list"</code> on an element that wraps the list.</p>
 
 
 
@@ -1770,7 +2227,7 @@ the default target for content replacements by the pager and the filter.</p>
       <nav class="md-footer__inner md-grid" aria-label="Footer" >
         
           
-          <a href="../dashboard_cells/" class="md-footer__link md-footer__link--prev" aria-label="Previous: Dashboard Cells">
+          <a href="../view_components/" class="md-footer__link md-footer__link--prev" aria-label="Previous: View Components">
             <div class="md-footer__button md-icon">
               
               <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
@@ -1780,20 +2237,20 @@ the default target for content replacements by the pager and the filter.</p>
                 Previous
               </span>
               <div class="md-ellipsis">
-                Dashboard Cells
+                View Components
               </div>
             </div>
           </a>
         
         
           
-          <a href="../recycler/" class="md-footer__link md-footer__link--next" aria-label="Next: The Recycler">
+          <a href="../actions/" class="md-footer__link md-footer__link--next" aria-label="Next: Row and Bulk Actions">
             <div class="md-footer__title">
               <span class="md-footer__direction">
                 Next
               </span>
               <div class="md-ellipsis">
-                The Recycler
+                Row and Bulk Actions
               </div>
             </div>
             <div class="md-footer__button md-icon">
@@ -1850,14 +2307,10 @@ the default target for content replacements by the pager and the filter.</p>
     
       
       
-      <script id="__config" type="application/json">{"annotate": null, "base": "../..", "features": ["content.code.copy", "navigation.footer", "content.action.edit", "navigation.top", "search.suggest", "search.highlight", "search.share", "navigation.path", "navigation.indexes", "toc.follow"], "search": "../../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
+      <script id="__config" type="application/json">{"annotate": null, "base": "../..", "features": ["content.code.copy", "navigation.footer", "content.action.edit", "navigation.top", "search.suggest", "search.highlight", "search.share", "navigation.path", "navigation.indexes", "toc.follow"], "search": "../../assets/javascripts/workers/search.a7633da7.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
     
     
-      <script src="../../assets/javascripts/bundle.d7400e89.min.js"></script>
-      
-        <script src="https://cdn.jsdelivr.net/gh/highlightjs/cdn-release@11.9.0/build/highlight.min.js"></script>
-      
-        <script src="../../assets/js/hljs.js"></script>
+      <script src="../../assets/javascripts/bundle.c21346df.min.js"></script>
       
     
   </body>

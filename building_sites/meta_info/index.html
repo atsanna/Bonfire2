@@ -21,18 +21,18 @@
       
       
       <link rel="icon" href="../../assets/images/favicon.png">
-      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.7">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.8.0">
     
     
       
-        <title>Meta Info - Bonfire 2 (beta)</title>
+        <title>Add a Custom Field to User Profiles - Bonfire 2</title>
       
     
     
-      <link rel="stylesheet" href="../../assets/stylesheets/main.ec1eaa64.min.css">
+      <link rel="stylesheet" href="../../assets/stylesheets/main.57a0d79d.min.css">
       
         
-        <link rel="stylesheet" href="../../assets/stylesheets/palette.ab4e12ef.min.css">
+        <link rel="stylesheet" href="../../assets/stylesheets/palette.fb2fffe2.min.css">
       
       
 
@@ -50,8 +50,6 @@
         <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
       
     
-    
-      <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/highlightjs/cdn-release@11.9.0/build/styles/github-dark.min.css">
     
       <link rel="stylesheet" href="../../assets/css/codeigniter.css">
     
@@ -73,7 +71,7 @@
     
     
     
-    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="deep-purple" data-md-color-accent="indigo">
+    <body dir="ltr" data-md-color-scheme="codeigniter" data-md-color-primary="custom" data-md-color-accent="custom">
   
     
     <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
@@ -82,7 +80,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#meta-info" class="md-skip">
+        <a href="#add-a-custom-field-to-user-profiles" class="md-skip">
           Skip to content
         </a>
       
@@ -98,7 +96,7 @@
 
 <header class="md-header md-header--shadow" data-md-component="header">
   <nav class="md-header__inner md-grid" aria-label="Header">
-    <a href="https://codeigniter.com" title="Bonfire 2 (beta)" class="md-header__button md-logo" aria-label="Bonfire 2 (beta)" data-md-component="logo">
+    <a href="https://codeigniter.com" title="Bonfire 2" class="md-header__button md-logo" aria-label="Bonfire 2" data-md-component="logo">
       
   
   <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
@@ -112,13 +110,13 @@
       <div class="md-header__ellipsis">
         <div class="md-header__topic">
           <span class="md-ellipsis">
-            Bonfire 2 (beta)
+            Bonfire 2
           </span>
         </div>
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Meta Info
+              Add a Custom Field to User Profiles
             
           </span>
         </div>
@@ -131,7 +129,7 @@
     
     
     
-    <input class="md-option" data-md-color-media="(prefers-color-scheme: light)" data-md-color-scheme="default" data-md-color-primary="deep-purple" data-md-color-accent="indigo"  aria-label="Switch to dark mode"  type="radio" name="__palette" id="__palette_0">
+    <input class="md-option" data-md-color-media="(prefers-color-scheme: light)" data-md-color-scheme="codeigniter" data-md-color-primary="custom" data-md-color-accent="custom"  aria-label="Switch to dark mode"  type="radio" name="__palette" id="__palette_0">
     
       <label class="md-header__button md-icon" title="Switch to dark mode" for="__palette_1" hidden>
         <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a4 4 0 0 0-4 4 4 4 0 0 0 4 4 4 4 0 0 0 4-4 4 4 0 0 0-4-4m0 10a6 6 0 0 1-6-6 6 6 0 0 1 6-6 6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12z"/></svg>
@@ -141,7 +139,7 @@
     
     
     
-    <input class="md-option" data-md-color-media="(prefers-color-scheme: dark)" data-md-color-scheme="slate" data-md-color-primary="deep-purple" data-md-color-accent="indigo"  aria-label="Switch to light mode"  type="radio" name="__palette" id="__palette_1">
+    <input class="md-option" data-md-color-media="(prefers-color-scheme: dark)" data-md-color-scheme="slate" data-md-color-primary="custom" data-md-color-accent="custom"  aria-label="Switch to light mode"  type="radio" name="__palette" id="__palette_1">
     
       <label class="md-header__button md-icon" title="Switch to light mode" for="__palette_0" hidden>
         <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 18c-.89 0-1.74-.2-2.5-.55C11.56 16.5 13 14.42 13 12s-1.44-4.5-3.5-5.45C10.26 6.2 11.11 6 12 6a6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12z"/></svg>
@@ -241,13 +239,13 @@
 
 <nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
   <label class="md-nav__title" for="__drawer">
-    <a href="https://codeigniter.com" title="Bonfire 2 (beta)" class="md-nav__button md-logo" aria-label="Bonfire 2 (beta)" data-md-component="logo">
+    <a href="https://codeigniter.com" title="Bonfire 2" class="md-nav__button md-logo" aria-label="Bonfire 2" data-md-component="logo">
       
   
   <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
 
     </a>
-    Bonfire 2 (beta)
+    Bonfire 2
   </label>
   
     <div class="md-nav__source">
@@ -299,6 +297,14 @@
   
     
     
+      
+        
+      
+        
+      
+        
+      
+        
       
         
       
@@ -383,14 +389,14 @@
   
   
     <li class="md-nav__item">
-      <a href="../../intro/philosophy/" class="md-nav__link">
+      <a href="../../intro/app_structure/" class="md-nav__link">
         
   
   
   <span class="md-ellipsis">
     
   
-    Our Philosophy
+    Bonfire Application Structure
   
 
     
@@ -411,14 +417,126 @@
   
   
     <li class="md-nav__item">
-      <a href="../../intro/app_structure/" class="md-nav__link">
+      <a href="../../intro/configuration/" class="md-nav__link">
         
   
   
   <span class="md-ellipsis">
     
   
-    Bonfire Application Structure
+    Configuration Reference
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../intro/ai_agents/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Working With AI Agents
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../intro/request_flow/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    How Bonfire Fits Into a Request
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../intro/published_themes/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Why Themes Are Published Into Your App
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../intro/philosophy/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Our Philosophy
   
 
     
@@ -490,6 +608,14 @@
       
         
       
+        
+      
+        
+      
+        
+      
+        
+      
     
     
     
@@ -546,14 +672,42 @@
   
   
     <li class="md-nav__item">
-      <a href="../../modules/assets/" class="md-nav__link">
+      <a href="../../modules/dashboard/" class="md-nav__link">
         
   
   
   <span class="md-ellipsis">
     
   
-    Asset Management
+    The Dashboard
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../modules/users/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Users
   
 
     
@@ -602,14 +756,98 @@
   
   
     <li class="md-nav__item">
-      <a href="../../modules/meta_info/" class="md-nav__link">
+      <a href="../../modules/settings/" class="md-nav__link">
         
   
   
   <span class="md-ellipsis">
     
   
-    Meta Info
+    General Settings
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../modules/email/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Email Settings
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../modules/tools/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Tools
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../modules/assets/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Asset Management
   
 
     
@@ -658,14 +896,14 @@
   
   
     <li class="md-nav__item">
-      <a href="../../modules/dashboard/" class="md-nav__link">
+      <a href="../../modules/meta_info/" class="md-nav__link">
         
   
   
   <span class="md-ellipsis">
     
   
-    The Dashboard
+    Meta Info
   
 
     
@@ -773,34 +1011,6 @@
   
   
     <li class="md-nav__item">
-      <a href="../alerts/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    Alerts
-  
-
-    
-  </span>
-  
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
       <a href="../assets/" class="md-nav__link">
         
   
@@ -808,7 +1018,7 @@
   <span class="md-ellipsis">
     
   
-    Including Assets
+    Add CSS and JS to Your Site Theme
   
 
     
@@ -857,14 +1067,14 @@
   
   
     <li class="md-nav__item">
-      <a href="../consent/" class="md-nav__link">
+      <a href="../metadata/" class="md-nav__link">
         
   
   
   <span class="md-ellipsis">
     
   
-    Consent
+    View Metadata
   
 
     
@@ -885,14 +1095,42 @@
   
   
     <li class="md-nav__item">
-      <a href="../metadata/" class="md-nav__link">
+      <a href="../alerts/" class="md-nav__link">
         
   
   
   <span class="md-ellipsis">
     
   
-    View Metadata
+    Alerts
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../consent/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Load Analytics Only After Visitors Consent
   
 
     
@@ -950,6 +1188,24 @@
         
       
       
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Add a Custom Field to User Profiles
+  
+
+    
+  </span>
+  
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
       <a href="./" class="md-nav__link md-nav__link--active">
         
   
@@ -957,7 +1213,7 @@
   <span class="md-ellipsis">
     
   
-    Meta Info
+    Add a Custom Field to User Profiles
   
 
     
@@ -966,6 +1222,58 @@
   
 
       </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#1-define-the-field" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1. Define the field
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#2-read-the-value" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2. Read the value
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#3-write-the-value-from-your-own-forms" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3. Write the value from your own forms
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
       
     </li>
   
@@ -1018,6 +1326,20 @@
       
         
           
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
         
       
         
@@ -1092,14 +1414,14 @@
   
   
     <li class="md-nav__item">
-      <a href="../../building_admin_modules/creating_an_admin_module/" class="md-nav__link">
+      <a href="../../building_admin_modules/tutorial_first_module/" class="md-nav__link">
         
   
   
   <span class="md-ellipsis">
     
   
-    Creating an Admin Module
+    Tutorial: Build Your First Admin Module
   
 
     
@@ -1120,14 +1442,154 @@
   
   
     <li class="md-nav__item">
-      <a href="../../building_admin_modules/dashboard_cells/" class="md-nav__link">
+      <a href="../../building_admin_modules/generating_a_module/" class="md-nav__link">
         
   
   
   <span class="md-ellipsis">
     
   
-    Dashboard Cells
+    Generating an Admin Module
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../building_admin_modules/creating_an_admin_module/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Module Structure
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../building_admin_modules/menus/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Menus
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../building_admin_modules/controllers_and_views/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Admin Controllers, Views and Themes
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../building_admin_modules/permissions/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Permissions
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../building_admin_modules/view_components/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    View Components
   
 
     
@@ -1156,6 +1618,62 @@
     
   
     Filters
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../building_admin_modules/actions/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Row and Bulk Actions
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../building_admin_modules/search/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Search
   
 
     
@@ -1232,14 +1750,14 @@
   
   
     <li class="md-nav__item">
-      <a href="../../building_admin_modules/search/" class="md-nav__link">
+      <a href="../../building_admin_modules/dashboard_widgets/" class="md-nav__link">
         
   
   
   <span class="md-ellipsis">
     
   
-    Search
+    Dashboard Widgets
   
 
     
@@ -1260,14 +1778,14 @@
   
   
     <li class="md-nav__item">
-      <a href="../../building_admin_modules/view_components/" class="md-nav__link">
+      <a href="../../building_admin_modules/localization/" class="md-nav__link">
         
   
   
   <span class="md-ellipsis">
     
   
-    View Components
+    Localization
   
 
     
@@ -1288,14 +1806,14 @@
   
   
     <li class="md-nav__item">
-      <a href="../../building_admin_modules/widgets/" class="md-nav__link">
+      <a href="../../building_admin_modules/testing/" class="md-nav__link">
         
   
   
   <span class="md-ellipsis">
     
   
-    Widgets
+    Testing Your Admin Module
   
 
     
@@ -1335,6 +1853,47 @@
   
     
   
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#1-define-the-field" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1. Define the field
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#2-read-the-value" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2. Read the value
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#3-write-the-value-from-your-own-forms" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3. Write the value from your own forms
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
   
 </nav>
                   </div>
@@ -1407,37 +1966,33 @@
   
 
 
-<h1 id="meta-info">Meta Info</h1>
-<p>Bonfire provides Entity-Attribute-Value style storage for additional data of entities without
-modifying the underlying models and database tables. By default, it can be used to add meta
-information to users, and it can also be used to store nad retrieve meta information for the
-entities managed by your own admin modules.</p>
-<p>Once you configure meta info for a resource as described in the Meta Info page of
-<a href="../../modules/meta_info/">Modules section</a>, you can access and write extra data to an entity without
-the modifying the underlying resource database table:</p>
-<pre class="highlight"><code class="language-php">// access your user entity
-$user = model('UserModel')-&gt;find(5);
+<h1 id="add-a-custom-field-to-user-profiles">Add a Custom Field to User Profiles</h1>
+<p>This guide stores an extra piece of information on users, a website URL, without changing the <code>users</code> table.
+For the full set of field options and methods, or to add meta to your own entities, see the
+<a href="../../modules/meta_info/">Meta Info</a> reference.</p>
+<h2 id="1-define-the-field">1. Define the field</h2>
+<p>Add the field to <code>$metaFields</code> in <code>app/Config/Users.php</code>. The outer key is the fieldset legend on the user form:</p>
+<div class="highlight"><pre><span></span><code><span class="k">public</span> <span class="nv">$metaFields</span> <span class="o">=</span> <span class="p">[</span>
+    <span class="s1">'Profile'</span> <span class="o">=&gt;</span> <span class="p">[</span>
+        <span class="s1">'website_url'</span> <span class="o">=&gt;</span> <span class="p">[</span><span class="s1">'label'</span> <span class="o">=&gt;</span> <span class="s1">'Website'</span><span class="p">,</span> <span class="s1">'type'</span> <span class="o">=&gt;</span> <span class="s1">'text'</span><span class="p">,</span> <span class="s1">'validation'</span> <span class="o">=&gt;</span> <span class="s1">'permit_empty|valid_url_strict'</span><span class="p">],</span>
+    <span class="p">],</span>
+<span class="p">];</span>
+</code></pre></div>
+<p>The field now appears on the Create/Edit User form in the admin area, and its value is validated and saved with the user.</p>
+<h2 id="2-read-the-value">2. Read the value</h2>
+<div class="highlight"><pre><span></span><code><span class="nv">$user</span> <span class="o">=</span> <span class="nx">model</span><span class="p">(</span><span class="s1">'UserModel'</span><span class="p">)</span><span class="o">-&gt;</span><span class="na">find</span><span class="p">(</span><span class="mi">5</span><span class="p">);</span>
 
-$url = $this-&gt;request-&gt;getPost('website_url');
-// save meta field:
-$user-&gt;saveMeta('website_url', $url);
-
-// get all meta data
-$meta = $user-&gt;allMeta();
-
-// delete meta info entry
-$user-&gt;deleteMeta('website_url');
-
-// delete all meta info for an entry
-$user-&gt;deletResouceMeta();
-
-// update meta for a resource
-$post = [
-    'website_url' =&gt; 'https://example.com',
-    'facebook_name' =&gt; 'johnny.rose'
-];
-$user-&gt;syncMeta($post);</code></pre>
-<p>See more examples and detailed documentation on <a href="../../modules/meta_info/">Meta Info</a> page.</p>
+<span class="nv">$website</span> <span class="o">=</span> <span class="nv">$user</span><span class="o">-&gt;</span><span class="na">meta</span><span class="p">(</span><span class="s1">'website_url'</span><span class="p">);</span> <span class="c1">// null if not set</span>
+</code></pre></div>
+<h2 id="3-write-the-value-from-your-own-forms">3. Write the value from your own forms</h2>
+<p><code>saveMeta()</code> saves immediately; there is no need to save the user afterwards:</p>
+<div class="highlight"><pre><span></span><code><span class="nv">$user</span><span class="o">-&gt;</span><span class="na">saveMeta</span><span class="p">(</span><span class="s1">'website_url'</span><span class="p">,</span> <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">request</span><span class="o">-&gt;</span><span class="na">getPost</span><span class="p">(</span><span class="s1">'website_url'</span><span class="p">));</span>
+</code></pre></div>
+<p>To save several fields at once, use <code>syncMeta()</code>. Fields passed with an empty value are deleted, and keys not defined in <code>$metaFields</code> are ignored:</p>
+<div class="highlight"><pre><span></span><code><span class="nv">$user</span><span class="o">-&gt;</span><span class="na">syncMeta</span><span class="p">([</span>
+    <span class="s1">'website_url'</span> <span class="o">=&gt;</span> <span class="s1">'https://example.com'</span><span class="p">,</span>
+<span class="p">]);</span>
+</code></pre></div>
 
 
 
@@ -1553,14 +2108,10 @@ $user-&gt;syncMeta($post);</code></pre>
     
       
       
-      <script id="__config" type="application/json">{"annotate": null, "base": "../..", "features": ["content.code.copy", "navigation.footer", "content.action.edit", "navigation.top", "search.suggest", "search.highlight", "search.share", "navigation.path", "navigation.indexes", "toc.follow"], "search": "../../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
+      <script id="__config" type="application/json">{"annotate": null, "base": "../..", "features": ["content.code.copy", "navigation.footer", "content.action.edit", "navigation.top", "search.suggest", "search.highlight", "search.share", "navigation.path", "navigation.indexes", "toc.follow"], "search": "../../assets/javascripts/workers/search.a7633da7.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
     
     
-      <script src="../../assets/javascripts/bundle.d7400e89.min.js"></script>
-      
-        <script src="https://cdn.jsdelivr.net/gh/highlightjs/cdn-release@11.9.0/build/highlight.min.js"></script>
-      
-        <script src="../../assets/js/hljs.js"></script>
+      <script src="../../assets/javascripts/bundle.c21346df.min.js"></script>
       
     
   </body>

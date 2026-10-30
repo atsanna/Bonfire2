@@ -11,28 +11,28 @@
       
       
       
-        <link rel="prev" href="../components/">
+        <link rel="prev" href="../alerts/">
       
       
-        <link rel="next" href="../metadata/">
+        <link rel="next" href="../settings/">
       
       
         
       
       
       <link rel="icon" href="../../assets/images/favicon.png">
-      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.7">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.8.0">
     
     
       
-        <title>Consent - Bonfire 2 (beta)</title>
+        <title>Load Analytics Only After Visitors Consent - Bonfire 2</title>
       
     
     
-      <link rel="stylesheet" href="../../assets/stylesheets/main.ec1eaa64.min.css">
+      <link rel="stylesheet" href="../../assets/stylesheets/main.57a0d79d.min.css">
       
         
-        <link rel="stylesheet" href="../../assets/stylesheets/palette.ab4e12ef.min.css">
+        <link rel="stylesheet" href="../../assets/stylesheets/palette.fb2fffe2.min.css">
       
       
 
@@ -50,8 +50,6 @@
         <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
       
     
-    
-      <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/highlightjs/cdn-release@11.9.0/build/styles/github-dark.min.css">
     
       <link rel="stylesheet" href="../../assets/css/codeigniter.css">
     
@@ -73,7 +71,7 @@
     
     
     
-    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="deep-purple" data-md-color-accent="indigo">
+    <body dir="ltr" data-md-color-scheme="codeigniter" data-md-color-primary="custom" data-md-color-accent="custom">
   
     
     <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
@@ -82,7 +80,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#consent" class="md-skip">
+        <a href="#load-analytics-only-after-visitors-consent" class="md-skip">
           Skip to content
         </a>
       
@@ -98,7 +96,7 @@
 
 <header class="md-header md-header--shadow" data-md-component="header">
   <nav class="md-header__inner md-grid" aria-label="Header">
-    <a href="https://codeigniter.com" title="Bonfire 2 (beta)" class="md-header__button md-logo" aria-label="Bonfire 2 (beta)" data-md-component="logo">
+    <a href="https://codeigniter.com" title="Bonfire 2" class="md-header__button md-logo" aria-label="Bonfire 2" data-md-component="logo">
       
   
   <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
@@ -112,13 +110,13 @@
       <div class="md-header__ellipsis">
         <div class="md-header__topic">
           <span class="md-ellipsis">
-            Bonfire 2 (beta)
+            Bonfire 2
           </span>
         </div>
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Consent
+              Load Analytics Only After Visitors Consent
             
           </span>
         </div>
@@ -131,7 +129,7 @@
     
     
     
-    <input class="md-option" data-md-color-media="(prefers-color-scheme: light)" data-md-color-scheme="default" data-md-color-primary="deep-purple" data-md-color-accent="indigo"  aria-label="Switch to dark mode"  type="radio" name="__palette" id="__palette_0">
+    <input class="md-option" data-md-color-media="(prefers-color-scheme: light)" data-md-color-scheme="codeigniter" data-md-color-primary="custom" data-md-color-accent="custom"  aria-label="Switch to dark mode"  type="radio" name="__palette" id="__palette_0">
     
       <label class="md-header__button md-icon" title="Switch to dark mode" for="__palette_1" hidden>
         <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a4 4 0 0 0-4 4 4 4 0 0 0 4 4 4 4 0 0 0 4-4 4 4 0 0 0-4-4m0 10a6 6 0 0 1-6-6 6 6 0 0 1 6-6 6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12z"/></svg>
@@ -141,7 +139,7 @@
     
     
     
-    <input class="md-option" data-md-color-media="(prefers-color-scheme: dark)" data-md-color-scheme="slate" data-md-color-primary="deep-purple" data-md-color-accent="indigo"  aria-label="Switch to light mode"  type="radio" name="__palette" id="__palette_1">
+    <input class="md-option" data-md-color-media="(prefers-color-scheme: dark)" data-md-color-scheme="slate" data-md-color-primary="custom" data-md-color-accent="custom"  aria-label="Switch to light mode"  type="radio" name="__palette" id="__palette_1">
     
       <label class="md-header__button md-icon" title="Switch to light mode" for="__palette_0" hidden>
         <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 18c-.89 0-1.74-.2-2.5-.55C11.56 16.5 13 14.42 13 12s-1.44-4.5-3.5-5.45C10.26 6.2 11.11 6 12 6a6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12z"/></svg>
@@ -241,13 +239,13 @@
 
 <nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
   <label class="md-nav__title" for="__drawer">
-    <a href="https://codeigniter.com" title="Bonfire 2 (beta)" class="md-nav__button md-logo" aria-label="Bonfire 2 (beta)" data-md-component="logo">
+    <a href="https://codeigniter.com" title="Bonfire 2" class="md-nav__button md-logo" aria-label="Bonfire 2" data-md-component="logo">
       
   
   <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
 
     </a>
-    Bonfire 2 (beta)
+    Bonfire 2
   </label>
   
     <div class="md-nav__source">
@@ -299,6 +297,14 @@
   
     
     
+      
+        
+      
+        
+      
+        
+      
+        
       
         
       
@@ -383,14 +389,14 @@
   
   
     <li class="md-nav__item">
-      <a href="../../intro/philosophy/" class="md-nav__link">
+      <a href="../../intro/app_structure/" class="md-nav__link">
         
   
   
   <span class="md-ellipsis">
     
   
-    Our Philosophy
+    Bonfire Application Structure
   
 
     
@@ -411,14 +417,126 @@
   
   
     <li class="md-nav__item">
-      <a href="../../intro/app_structure/" class="md-nav__link">
+      <a href="../../intro/configuration/" class="md-nav__link">
         
   
   
   <span class="md-ellipsis">
     
   
-    Bonfire Application Structure
+    Configuration Reference
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../intro/ai_agents/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Working With AI Agents
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../intro/request_flow/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    How Bonfire Fits Into a Request
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../intro/published_themes/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Why Themes Are Published Into Your App
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../intro/philosophy/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Our Philosophy
   
 
     
@@ -490,6 +608,14 @@
       
         
       
+        
+      
+        
+      
+        
+      
+        
+      
     
     
     
@@ -546,14 +672,42 @@
   
   
     <li class="md-nav__item">
-      <a href="../../modules/assets/" class="md-nav__link">
+      <a href="../../modules/dashboard/" class="md-nav__link">
         
   
   
   <span class="md-ellipsis">
     
   
-    Asset Management
+    The Dashboard
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../modules/users/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Users
   
 
     
@@ -602,14 +756,98 @@
   
   
     <li class="md-nav__item">
-      <a href="../../modules/meta_info/" class="md-nav__link">
+      <a href="../../modules/settings/" class="md-nav__link">
         
   
   
   <span class="md-ellipsis">
     
   
-    Meta Info
+    General Settings
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../modules/email/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Email Settings
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../modules/tools/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Tools
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../modules/assets/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Asset Management
   
 
     
@@ -658,14 +896,14 @@
   
   
     <li class="md-nav__item">
-      <a href="../../modules/dashboard/" class="md-nav__link">
+      <a href="../../modules/meta_info/" class="md-nav__link">
         
   
   
   <span class="md-ellipsis">
     
   
-    The Dashboard
+    Meta Info
   
 
     
@@ -773,34 +1011,6 @@
   
   
     <li class="md-nav__item">
-      <a href="../alerts/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    Alerts
-  
-
-    
-  </span>
-  
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
       <a href="../assets/" class="md-nav__link">
         
   
@@ -808,7 +1018,7 @@
   <span class="md-ellipsis">
     
   
-    Including Assets
+    Add CSS and JS to Your Site Theme
   
 
     
@@ -854,6 +1064,62 @@
                 
   
   
+  
+  
+    <li class="md-nav__item">
+      <a href="../metadata/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    View Metadata
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../alerts/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Alerts
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
     
   
   
@@ -873,7 +1139,7 @@
   <span class="md-ellipsis">
     
   
-    Consent
+    Load Analytics Only After Visitors Consent
   
 
     
@@ -891,7 +1157,7 @@
   <span class="md-ellipsis">
     
   
-    Consent
+    Load Analytics Only After Visitors Consent
   
 
     
@@ -917,10 +1183,10 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#using-the-helper" class="md-nav__link">
+  <a href="#1-turn-on-the-consent-form" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Using the Helper
+        1. Turn on the consent form
       
     </span>
   </a>
@@ -928,10 +1194,21 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#configuration" class="md-nav__link">
+  <a href="#2-point-to-your-cookie-policy" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Configuration
+        2. Point to your cookie policy
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#3-wrap-the-script-in-a-consent-check" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3. Wrap the script in a consent check
       
     </span>
   </a>
@@ -942,34 +1219,6 @@
   
 </nav>
       
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../metadata/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    View Metadata
-  
-
-    
-  </span>
-  
-  
-
-      </a>
     </li>
   
 
@@ -1017,7 +1266,7 @@
   <span class="md-ellipsis">
     
   
-    Meta Info
+    Add a Custom Field to User Profiles
   
 
     
@@ -1095,6 +1344,20 @@
       
         
       
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
     
     
     
@@ -1151,14 +1414,14 @@
   
   
     <li class="md-nav__item">
-      <a href="../../building_admin_modules/creating_an_admin_module/" class="md-nav__link">
+      <a href="../../building_admin_modules/tutorial_first_module/" class="md-nav__link">
         
   
   
   <span class="md-ellipsis">
     
   
-    Creating an Admin Module
+    Tutorial: Build Your First Admin Module
   
 
     
@@ -1179,14 +1442,154 @@
   
   
     <li class="md-nav__item">
-      <a href="../../building_admin_modules/dashboard_cells/" class="md-nav__link">
+      <a href="../../building_admin_modules/generating_a_module/" class="md-nav__link">
         
   
   
   <span class="md-ellipsis">
     
   
-    Dashboard Cells
+    Generating an Admin Module
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../building_admin_modules/creating_an_admin_module/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Module Structure
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../building_admin_modules/menus/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Menus
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../building_admin_modules/controllers_and_views/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Admin Controllers, Views and Themes
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../building_admin_modules/permissions/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Permissions
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../building_admin_modules/view_components/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    View Components
   
 
     
@@ -1215,6 +1618,62 @@
     
   
     Filters
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../building_admin_modules/actions/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Row and Bulk Actions
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../building_admin_modules/search/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Search
   
 
     
@@ -1291,14 +1750,14 @@
   
   
     <li class="md-nav__item">
-      <a href="../../building_admin_modules/search/" class="md-nav__link">
+      <a href="../../building_admin_modules/dashboard_widgets/" class="md-nav__link">
         
   
   
   <span class="md-ellipsis">
     
   
-    Search
+    Dashboard Widgets
   
 
     
@@ -1319,14 +1778,14 @@
   
   
     <li class="md-nav__item">
-      <a href="../../building_admin_modules/view_components/" class="md-nav__link">
+      <a href="../../building_admin_modules/localization/" class="md-nav__link">
         
   
   
   <span class="md-ellipsis">
     
   
-    View Components
+    Localization
   
 
     
@@ -1347,14 +1806,14 @@
   
   
     <li class="md-nav__item">
-      <a href="../../building_admin_modules/widgets/" class="md-nav__link">
+      <a href="../../building_admin_modules/testing/" class="md-nav__link">
         
   
   
   <span class="md-ellipsis">
     
   
-    Widgets
+    Testing Your Admin Module
   
 
     
@@ -1402,10 +1861,10 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#using-the-helper" class="md-nav__link">
+  <a href="#1-turn-on-the-consent-form" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Using the Helper
+        1. Turn on the consent form
       
     </span>
   </a>
@@ -1413,10 +1872,21 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#configuration" class="md-nav__link">
+  <a href="#2-point-to-your-cookie-policy" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Configuration
+        2. Point to your cookie policy
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#3-wrap-the-script-in-a-consent-check" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3. Wrap the script in a consent check
       
     </span>
   </a>
@@ -1496,51 +1966,29 @@
   
 
 
-<h1 id="consent">Consent</h1>
-<p>With the <a href="https://gdpr.eu/">Global Data Protection Regulation</a> and other data privacy regulations being put in place
-across the globe, you have various requirements as web developers that you didn't use to. The Consent module helps
-you manage collecting consent from the user before storing any cookies through an opt-in system for all non-required
-cookies. It provides the mechanism for displaying the consent form, and recording the user's preferences. A helper 
-method, <code>has_consent</code>, is provided so that you can easily meet the consent requirements when building your site.</p>
-<h2 id="using-the-helper">Using the Helper</h2>
-<p>The helper is loaded automatically by the BaseController. As long as you extend the BaseController (or one of its 
-children, like the AuthController) then you do not need to explicitly load the helper.</p>
-<p>The helper can be used both within the views and the controllers to limit which services are called (like ad-tracking
-or analytics) and which cookies you set. </p>
-<p>Within a view you might wrap Google Analytics tag withn a check against the <code>performing</code> consent: </p>
-<pre class="highlight"><code class="language-php">&lt;?php if (has_consent('performing')) : ?&gt;
-&lt;script&gt;
-    &lt;!-- Global Site Tag (gtag.js) - Google Analytics --&gt;
-    ... (several lines of code) ...
-&lt;/script&gt;
-&lt;?php endif ?&gt;</code></pre>
-<h2 id="configuration">Configuration</h2>
-<p>All settings are available in the <code>Config\Consent</code> class, or in the admin settings area.</p>
-<p><strong>$requireConsent</strong></p>
-<p>This determines whether the consent system is enabled or not. If <code>true</code>, the consent form will be automatically
-inserted into all front-end views by the Consent controller filter. If <code>false</code>, the consent system will not display
-and the helper will always return <code>true</code>. The default value is <code>false</code>;</p>
-<p><strong>$consentLength</strong></p>
-<p>The number of days before a visitor is asked for their consent again. The default value is 180 days (6 months).</p>
-<p><strong>$consentForm</strong></p>
-<p>The view that is displayed to site visitors that a) asks for their basic consent and b) allows them to accept/reject
-the various consents. The <code>required</code> consent is unable to be rejected and contains things like the Auth cookie that
-determines if you're logged in or not.</p>
-<p><strong>$consentFormStyles</strong>
-<strong>$consentFormScripts</strong></p>
-<p>The views that will be loaded that contain the CSS and Javascript, respectively. The contents of these views will
-be inserted into each page upon page load.</p>
-<p><strong>$policyUrl</strong> </p>
-<p>A URL (either full or relative) that points to the page that details the cookie policy. On many sites this will be
-included in the Privacy Policy or Terms of Service pages, or similar. </p>
-<p><strong>$consents</strong></p>
-<p>This is an array of the initial consents that will be asked for in the Consent Form. Each array item includes
-the alias the consent can be checked with, and the following items: </p>
-<ul>
-<li>name: The name as it is displayed to the visitors.</li>
-<li>desc: The description of the consent that describes the purpose of the cookies/services and what might be
-    no longer functional if the consent is rejected.  </li>
-</ul>
+<h1 id="load-analytics-only-after-visitors-consent">Load Analytics Only After Visitors Consent</h1>
+<p>This guide turns on Bonfire's cookie consent form and loads an analytics script only for visitors who accept
+performance cookies. For every setting and how to customize the form, see the <a href="../../modules/consent/">Consent</a> reference.</p>
+<h2 id="1-turn-on-the-consent-form">1. Turn on the consent form</h2>
+<p>In the admin area, go to <strong>Settings → Consent</strong> and enable consent. Alternatively, set it in <code>app/Config/Consent.php</code>:</p>
+<div class="highlight"><pre><span></span><code><span class="k">public</span> <span class="nx">bool</span> <span class="nv">$requireConsent</span> <span class="o">=</span> <span class="k">true</span><span class="p">;</span>
+</code></pre></div>
+<p>While consent is off, <code>has_consent()</code> always returns <code>true</code> and no form is shown.</p>
+<h2 id="2-point-to-your-cookie-policy">2. Point to your cookie policy</h2>
+<p>On the same settings screen, set the cookie policy URL and title, or set <code>$policyUrl</code> and <code>$policyTitle</code> in the
+config file. The form links to this page.</p>
+<h2 id="3-wrap-the-script-in-a-consent-check">3. Wrap the script in a consent check</h2>
+<p>In your view or layout, wrap the analytics tag in <code>has_consent()</code>, passing the consent's key:</p>
+<div class="highlight"><pre><span></span><code><span class="o">&lt;?</span><span class="nx">php</span> <span class="k">if</span> <span class="p">(</span><span class="nx">has_consent</span><span class="p">(</span><span class="s1">'performance'</span><span class="p">))</span> <span class="o">:</span> <span class="cp">?&gt;</span>
+<span class="x">&lt;script&gt;</span>
+<span class="x">    &lt;!-- Global Site Tag (gtag.js) - Google Analytics --&gt;</span>
+<span class="x">    ... (several lines of code) ...</span>
+<span class="x">&lt;/script&gt;</span>
+<span class="cp">&lt;?php</span> <span class="k">endif</span> <span class="cp">?&gt;</span>
+</code></pre></div>
+<p>The helper is loaded automatically in controllers that extend Bonfire's <code>BaseController</code>.</p>
+<p>Visitors who have not answered, or who rejected performance cookies, no longer load the script. The same check works
+in controllers, before you set a cookie or call a tracking service.</p>
 
 
 
@@ -1576,7 +2024,7 @@ the alias the consent can be checked with, and the following items: </p>
       <nav class="md-footer__inner md-grid" aria-label="Footer" >
         
           
-          <a href="../components/" class="md-footer__link md-footer__link--prev" aria-label="Previous: View Components">
+          <a href="../alerts/" class="md-footer__link md-footer__link--prev" aria-label="Previous: Alerts">
             <div class="md-footer__button md-icon">
               
               <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
@@ -1586,20 +2034,20 @@ the alias the consent can be checked with, and the following items: </p>
                 Previous
               </span>
               <div class="md-ellipsis">
-                View Components
+                Alerts
               </div>
             </div>
           </a>
         
         
           
-          <a href="../metadata/" class="md-footer__link md-footer__link--next" aria-label="Next: View Metadata">
+          <a href="../settings/" class="md-footer__link md-footer__link--next" aria-label="Next: Settings">
             <div class="md-footer__title">
               <span class="md-footer__direction">
                 Next
               </span>
               <div class="md-ellipsis">
-                View Metadata
+                Settings
               </div>
             </div>
             <div class="md-footer__button md-icon">
@@ -1656,14 +2104,10 @@ the alias the consent can be checked with, and the following items: </p>
     
       
       
-      <script id="__config" type="application/json">{"annotate": null, "base": "../..", "features": ["content.code.copy", "navigation.footer", "content.action.edit", "navigation.top", "search.suggest", "search.highlight", "search.share", "navigation.path", "navigation.indexes", "toc.follow"], "search": "../../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
+      <script id="__config" type="application/json">{"annotate": null, "base": "../..", "features": ["content.code.copy", "navigation.footer", "content.action.edit", "navigation.top", "search.suggest", "search.highlight", "search.share", "navigation.path", "navigation.indexes", "toc.follow"], "search": "../../assets/javascripts/workers/search.a7633da7.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
     
     
-      <script src="../../assets/javascripts/bundle.d7400e89.min.js"></script>
-      
-        <script src="https://cdn.jsdelivr.net/gh/highlightjs/cdn-release@11.9.0/build/highlight.min.js"></script>
-      
-        <script src="../../assets/js/hljs.js"></script>
+      <script src="../../assets/javascripts/bundle.c21346df.min.js"></script>
       
     
   </body>
